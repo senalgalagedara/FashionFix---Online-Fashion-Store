@@ -1,0 +1,127 @@
+body
+{
+  background: #b7d9e1bb ;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+  margin: 0px;
+  padding: 0px;
+}
+.header
+{
+    display: flex ;
+    padding: 0px;
+    width: 100%; 
+    margin: auto;
+    background-color: #002436;
+
+}
+.headerbox
+{
+    margin: 5px;
+    width: 30%;
+}
+.logoimg
+{
+    width: 50%; 
+    margin: auto 10px;
+    height: 90px;
+}
+.searchbox
+{
+    position: relative;
+    display: flex;
+    width: 30%;
+    margin: auto;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: black solid 1px;
+    background-color: white;
+    align-items: center;
+}
+.Stext
+{
+    width: 90%;
+    padding: 5px;
+    border: none;
+    height: 15px;
+    background-color: rgba(240, 248, 255, 0);
+    color: black;
+    font-size: 16px;
+    outline-style: none;
+}
+::placeholder
+{
+    color: black;
+    font-size: 16px;
+}
+.headerboxs
+{
+    width: 35%;
+    margin: auto;
+    display: inline-flex;
+    padding: 0px;
+}
+.signin
+{
+    width: 20%;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 20px;
+    text-align:  center;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin: auto;
+}
+.shape
+{
+    font-size: 30px !important;
+    margin: auto;
+    display: block;
+    color: white;
+    padding: 10px;
+}
+.shape:hover
+{
+    color: black;
+    background-color: white;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+}
+.login
+{
+    width: 20%;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: #CDF5FD;
+    border-radius: 20px;
+    text-align:  center;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin: auto;
+    display: flex;
+}
+.nav
+{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    padding: 0px;
+    margin:0px;
+    background-color: #00567e;
+}
+.nostyle
+{
+    font-family: "Roboto Condensed", sans-serif;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    list-style: none;
+    margin: auto;
+    display: block;
+    padding: 0px;
+    width: auto;
+}
