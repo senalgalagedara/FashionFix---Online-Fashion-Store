@@ -1,19 +1,19 @@
 body
 {
-  background: #b7d9e1bb ;
-  box-sizing: border-box !important;
-  overflow-x: hidden !important;
-  margin: 0px;
-  padding: 0px;
+    background:whitesmoke ; 
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    margin: 0px;
+    padding: 0px;
 }
 .header
 {
+    position: sticky !important;
     display: flex ;
     padding: 0px;
     width: 100%; 
     margin: auto;
-    background-color: #002436;
-
+    background-color: whitesmoke;
 }
 .headerbox
 {
@@ -63,8 +63,8 @@ body
 }
 .signin
 {
-    width: 20%;
-    padding: 10px;
+    width: 17%;
+    padding: 8px;
     border: 1px solid black;
     background-color: white;
     border-radius: 20px;
@@ -79,23 +79,23 @@ body
     font-size: 30px !important;
     margin: auto;
     display: block;
-    color: white;
+    color: black;
     padding: 10px;
 }
 .shape:hover
 {
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: #121212;
     border-radius: 50px;
     padding: 10px;
     cursor: pointer;
 }
 .login
 {
-    width: 20%;
-    padding: 10px;
+    width: 17%;
+    padding: 8px;
     border: 1px solid black;
-    background-color: #CDF5FD;
+    background-color: rgba(88, 88, 88, 0.238);
     border-radius: 20px;
     text-align:  center;
     font-family: "Roboto Condensed", sans-serif;
@@ -110,13 +110,14 @@ body
     height: 50px;
     display: flex;
     padding: 0px;
-    margin:0px;
-    background-color: #00567e;
+    margin: 0px;
+    box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.2);
+
 }
 .nostyle
 {
     font-family: "Roboto Condensed", sans-serif;
-    color: white;
+    color: black;
     font-weight: bold;
     text-decoration: none;
     list-style: none;
@@ -124,4 +125,112 @@ body
     display: block;
     padding: 0px;
     width: auto;
+}
+
+.navbox
+{
+    position: absolute;
+    width: 750px;
+    height: 250px;
+    left: 100px;
+    z-index: 1;
+     
+}
+.nostyle:hover + .navbox .navdetailsMen {
+    display: block;
+    margin: auto;
+    width: 100%;
+    background-color: red;
+}
+.navdetailsMen
+{
+    display: none;  
+    margin: auto;
+    width: 100%;
+    background-color: red;
+}
+ul
+{
+    list-style: none;
+}
+.innernavCap
+{
+    font-size: 18px;
+    font-weight: 800;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
+}
+.innernav
+{
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+
+}
+.footerboxes
+{
+    display: flex;
+    background-color: whitesmoke;
+    height: 200px;
+    padding: 30px;
+    margin: 0px;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.footerbox
+{
+    width: 20%;
+    margin: auto;
+    text-decoration: none;
+    padding: 0px;
+}
+.footerlink,a
+{
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none !important; 
+    color: rgb(29, 29, 29);
+    text-align: left;
+    font-size: 14px;
+}
+.footerlinkCAP
+{
+    list-style: none;
+    text-align: left;
+    font-weight: 700;
+    font-size: 50px !important;
+    color: black;
+    margin-bottom: 10px;
+}
+footer
+{
+    width: 100%;
+    height: min-content;
+    bottom: 0px !important;
+    margin: 0px;
+    padding: 0px;
+}
+.width60
+{
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    text-align:left ;
+    width: 75%;
+    padding: 10px;
+}
+.width40
+{
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    text-align:right ;
+    width: 25%;
+    padding: 10px 20px;
+}
+
+.para
+{
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    color: black;
 }
