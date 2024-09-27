@@ -172,7 +172,7 @@ ul
     margin:50px auto;
     padding: 20px;
     width: 40%;
-    height: 500px;
+    height: 550px;
     border: 1px solid black;
     border-radius: 20px;
 }
@@ -214,9 +214,30 @@ ul
     border: 1px solid black;
 
 }
-.checkbox
+
+input[type=checkbox]
 {
-    height: 50px !important;
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+}
+.marginpara
+{
+    display: flex;
+    margin: 20px auto;
+}
+.submitbtn
+{
+    background-color: rgb(0, 94, 255);
+    border-radius: 12px;
+    padding: 8px;
+    width: 40%;
+    font-family: "Poppins", sans-serif;
+    margin: auto;
+    display: block;
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
 }
 .footerboxes
 {
