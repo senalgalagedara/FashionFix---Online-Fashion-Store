@@ -136,15 +136,15 @@ body
     z-index: 1;
      
 }
-.nostyle:hover + .navbox .navdetailsMen {
-    display: block;
+.nostyle:hover + .navdetailsMen {
+    display: flex;
     margin: auto;
     width: 100%;
     background-color: red;
 }
 .navdetailsMen
 {
-    display: none;  
+    display: flex   ;  
     margin: auto;
     width: 100%;
     background-color: red;
@@ -165,14 +165,64 @@ ul
     font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 500;
+}
+.signinbox
+{
+    position: relative;
+    margin:50px auto;
+    padding: 20px;
+    width: 40%;
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.headd
+{
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 30px;
+    margin: auto;
+    width: 90%;
+    display: block;
+    text-align: center;
+    padding: 20px;
+}
+.signparaa
+{
+    font-family: "Roboto Condensed", sans-serif;
+    width: 73%;
+    margin: 20px auto 10px;
+    font-weight: 500;
+}
+.signpara
+{
+    font-family: "Fredoka", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+.inputbox
+{
+    display: block;
+    width: 70%;
+    height: 25px;
+    margin: auto;
+    position: relative;
+    border-radius: 10px;
+    padding: 8px;
+    border: 1px solid black;
 
-
+}
+.checkbox
+{
+    height: 50px !important;
 }
 .footerboxes
 {
     display: flex;
     background-color: whitesmoke;
-    height: 200px;
+    height: 180px;
     padding: 30px;
     margin: 0px;
     color: white;
