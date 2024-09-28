@@ -187,13 +187,14 @@ ul
 }
 .signinbox
 {
-    position: relative;
-    margin:50px auto;
+    margin:100px auto;
     padding: 20px;
     width: 40%;
     height: 550px;
     border: 1px solid black;
     border-radius: 20px;
+    background-color: white;
+    z-index: 2;
 }
 .headd
 {
