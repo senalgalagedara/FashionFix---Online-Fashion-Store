@@ -17,10 +17,10 @@
 
 </head>
 <body>
-    <div style="position: fixed !important; width: 100%; margin:-8px 0px; padding: 0px;">
+    
         <div class="header">
             <div class="headerbox">
-                <a href="index.html"><img src="src/logo1.png" alt="fashionfix logo" class="logoimg"></a></div>
+                <a href="index.php"><img src="src/logo1.png" alt="fashionfix logo" class="logoimg"></a></div>
             <div class="searchbox" style="cursor: pointer;">
                 <span class="material-symbols-outlined">
                 search
@@ -35,13 +35,13 @@
                     shopping_cart
                 </span>
                 <div class="signin">
-                    <a href="signin.html" class="signfont">Sign Up</a>
+                    <a href="signin.php" class="signfont">Sign Up</a>
                 </div>
                 <div class="login">
                    <span class="material-symbols-outlined" style="font-size: 20px;margin: auto; border: 2px solid white; border-radius: 20px; text-align: center;">
                     person
                     </span> 
-                    <a href="login.html" style="margin: auto; font-family: 'Roboto Condensed', sans-serif !important; font-size: 15px; font-weight: 500; padding-right: 3px; color: white; text-align: center;">Log In</a>
+                    <a href="login.php" style="margin: auto; font-family: 'Roboto Condensed', sans-serif !important; font-size: 15px; font-weight: 500; padding-right: 3px; color: white; text-align: center;">Log In</a>
                 </div>
                 
             </div>
@@ -49,7 +49,7 @@
     
         <nav>
             <ol class="nav">
-                <a href="index.html" class="nostyle"><li class="nostyle">HOME</li></a>
+                <a href="index.php" class="nostyle"><li class="nostyle">HOME</li></a>
                 <a href="" class="nostyle" style="display: block;"><li class="nostyle">MEN</li></a>
                 <a href="" class="nostyle"><li class="nostyle">WOMEN</li></a>
                 <a href="" class="nostyle"><li class="nostyle">KIDS</li></a>
@@ -79,7 +79,7 @@
                 </div>
             </div>
         </nav>
-</div>
+<div class="bodysite">
     <div class="signinbox" style="height: 450px;">
         <h2 class="headd">Login to my Account</h2>
         <p class="signpara">Enter your E-mail and Password</p>
@@ -97,14 +97,15 @@
 
         <button type="submit" class="submitbtn">Login</button>
         <p class="para" style="text-align: center; margin-top: 20px;">
-            Already have an account?
-            <a href="" style="color: blue;">Login here</a>
+            New Customer?
+            <a href="signin.php" style="color: blue;">Create your account</a>
         </p>
     </div>
+</div>
     <footer>
         <div class="footerboxes">
             <div class="footerbox">
-                <img src="src/logo.jpg" width="50" height="50" alt="">
+                <img src="src/logo1.png" width="50" height="50" alt="">
                 <p class="para">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.?
                 </p>
