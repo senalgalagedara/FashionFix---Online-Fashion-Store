@@ -189,12 +189,13 @@ ul
 {
    height: auto;
    margin: auto;
-   padding-top: 50px;
+   padding-top: 150px !important;
    padding-bottom: 50px;
    background-image: url("../img/bg.jpg");
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
+   position: relative;
 }
 .signinbox
 {
