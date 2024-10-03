@@ -7,10 +7,12 @@ if(isset($_POST['submitsignin'])){
     $pw = $_POST['passwordd'];
 
     $sql = "INSERT INTO user_signin(User_Id,username,email,passwordd) VALUES('','$uname','$uemail','$pw')";
+    $sql2 = "INSERT INTO user_details(User_Id,username,first_name,last_name,address,phone_number,email) VALUES('','$uname','','','','','$uemail')";
 
     $result = $conn->query($sql);
+    $result2 = $conn->query($sql2);
 
-    if($result === TRUE)
+    if($result === TRUE AND $result2 ===TRUE)
     {
         header("location:index.php");
     }
@@ -116,10 +118,10 @@ if(isset($_POST['submitsignin'])){
 
         
         <p class="signpara marginpara">
-            <input class="checkbox" type="checkbox" name="" id="">By clicking this you agree to our terms & conditions.
+            <input class="checkbox" type="checkbox" name="" id="" required>By clicking this you agree to our terms & conditions.
         </p>
 
-        <button type="submit" name="submitsignin" class="submitbtn">Create An Account</button>
+        <button type="submit" name="submitsignin" class="submitbtn" style="cursor: pointer;">Create An Account</button>
         <p class="para" style="text-align: center; margin-top: 20px;">
             Already have an account?
             <a href="login.php" style="color: blue;">Login here</a>

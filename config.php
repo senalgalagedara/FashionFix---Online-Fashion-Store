@@ -5,7 +5,6 @@
     $password = "";
     $db = "iwt";
 
-
     // Create connection
     $conn = new mysqli($servername, $username, $password,$db);
 

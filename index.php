@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +17,28 @@
 
   </head>
 <body>
+<?php
+include("config.php");
+session_start();  // Start the session
+
+// Debugging: Check if session has been started and session variables are available
+if(!isset($_SESSION)){
+    echo "Session has not been started!";
+    exit();
+}
+
+// Check if the user is logged in
+if(isset($_SESSION['email'])){
+    $email = $_SESSION['email'];
+    echo "<p style='color:white;font-size:13px;'> You're logged in as $email </p>";
+} else {
+    // Debugging: Check if session variables are not being set
+    echo "Session email not found!";
+    // Redirect to index if no session is found
+    exit();
+}
+?>
+
 <?php 
  include("src/header.html")
 ?>

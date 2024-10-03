@@ -1,59 +1,4 @@
-<?php 
-session_start();
- include ("config.php");
- if(isset($_POST['loginbtn']))
- {
-    if (isset($_POST['username']) && isset($_POST['passwordd'])) 
-    {    
-       function validate($data)
-       {       
-           $data = trim($data);       
-           $data = stripslashes($data);       
-           $data = htmlspecialchars($data);       
-           return $data;    
-       }    
-       $uname = validate($_POST['username']);    
-       $pass = validate($_POST['passwordd']);   
-   
-       if (empty($uname)) 
-       {        
-           header("Location: login.php?error=User Name is required");
-           exit();    
-       }
-           else if(empty($pass))
-           {        
-               header("Location: login.php?error=Password is required");
-               exit();    
-           }else{
-               $sql = "SELECT * FROM user_signin WHERE username='$uname' AND passwordd='$pass'";
-               $result = mysqli_query($conn, $sql); 
-   
-              if (mysqli_num_rows($result) === 1) 
-              {           
-               $row = mysqli_fetch_assoc($result);  
-   
-               if ($row['username'] === $uname && $row['passwordd'] === $pass) 
-               {                
-                   echo "Logged in!";                              
-                   header("Location: index.php");                
-                   exit();            
-               }else{                
-                   header("Location: login.php?error=Incorect User name or password");                
-                   exit();            
-               }        
-           }else{            
-               header("Location: login.php?error=Incorect User name or password");            
-               exit();        
-           }    }}
-           else{    
-               header("Location: index.php");    
-               exit();}
- }
- else{
-    echo"asasdasd";
- }
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -136,12 +81,12 @@ session_start();
             </div>
         </nav>
 <div class="bodysite">
-    <div class="signinbox" style="height: 450px;">
+    <form class="signinbox" style="height: 450px;" method="post" action="authenticate.php">
         <h2 class="headd">Login to my Account</h2>
         <p class="signpara">Enter your E-mail and Password</p>
 
         <p class="signparaa">E-mail</p>
-        <input class="inputbox" type="text" name="username" id="">
+        <input class="inputbox" type="text" name="email" id="">
 
         <p class="signparaa">Password</p>
         <input class="inputbox" type="password" name="passwordd" id="">
@@ -157,7 +102,7 @@ session_start();
             New Customer?
             <a href="signin.php" style="color: blue;">Create your account</a>
         </p>
-    </div>
+    </form>
 </div>
 <?php
     include("src/footer.html")
