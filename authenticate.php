@@ -1,9 +1,8 @@
 <?php 
 
 include("config.php");
-session_start(); // Start the session at the top
+session_start(); 
 
-// Function to check if the email exists
 function emailExist($conn, $email){
     $sql = "SELECT * FROM user_signin WHERE email =?;";
     $stmt = mysqli_stmt_init($conn);
@@ -22,43 +21,31 @@ function emailExist($conn, $email){
     return $result;
 }
 
-// Function to handle user login
+
 function login($conn, $email, $pass){
     $sql = "SELECT * FROM user_signin WHERE email =?;";
     $stmt = mysqli_stmt_init($conn);
-    if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("Location: index.php?err=stmtfailed");
-        exit();
-    }
-
-
+    mysqli_stmt_prepare($stmt, $sql);
     mysqli_stmt_bind_param($stmt, 's', $email);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
 
-    if(!$row = mysqli_fetch_assoc($result)){
-        mysqli_stmt_close($stmt);
-        header("Location: index.php?err=usernull");
-        exit();
-    }
+$row = mysqli_fetch_assoc($result);
 
-    $hashedPass = $row['passwordd'];
-    if(!password_verify($pass, $hashedPass)){
-        mysqli_stmt_close($stmt);
-        header("Location: index.php?err=wrongpass");
-        exit();
-    }
 
-    // Start session for successful login
+    session_start();    
+    
     $_SESSION['email'] = $row['email'];
-    $_SESSION['User_Id'] = $row['id'];
+    $_SESSION['User_Id'] = $row['User_Id'];
+echo"<script>
+  alert('Hello\nHow are you?');
 
+</script>";
     mysqli_stmt_close($stmt);
-    header("Location: inbox.php");
+    header("Location: useraccount.php");
     exit();
 }
 
-// Main login logic
 if(isset($_POST['loginbtn'])){
     $email = $_POST['email'];
     $pass = $_POST['passwordd'];

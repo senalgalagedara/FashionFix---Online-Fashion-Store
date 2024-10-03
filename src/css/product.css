@@ -1,0 +1,133 @@
+body
+{
+    background-color: #FFFBF5;
+    margin: 0px;
+}
+
+.product
+{
+    background-color: #ECF9FF;
+    margin: 0px;
+    padding: 50px 10px;
+}
+
+.main
+{
+    display: flex;
+}
+
+.productimg
+{
+    border: 1px  solid #B4E4FF;
+    border-radius: 5px;
+    margin: 40px 80px;
+    padding: 20px 30px;
+    background-color: white;
+}
+
+.productbuy
+{
+    border: 1px  solid #B4E4FF;
+    border-radius: 5px;
+    background-color: white;
+    display: block;
+    margin: 40px 80px;
+}
+
+.productname
+{
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+    color: #3A98B9;
+    text-align: center;
+    margin: 0px 10px;
+    padding: 10px 20px;
+}
+
+.brandname
+{
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: #95BDFF;
+    text-align: left;
+    margin: 0px 20px;
+    padding: 10px 20px;
+}
+
+.productprice
+{
+    font-size: 24px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    color: rgba(36, 216, 240, 0.959);
+    padding: 0px 50px;
+}
+
+.color
+{
+    background-color: #e454d8;
+    border: none;
+    width: 50px;
+    height: 50px;
+    margin: 0px 50px;
+}
+
+.sizebtn
+{
+    margin: 0px 50px;
+}
+
+.size
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.btn
+{
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0px 50px;
+}
+
+.quantity
+{
+    width: 50px;
+
+}
+.text
+{
+    color: gray;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.line
+{
+    margin: 0px 20px;
+}
+.productdetails
+{
+    border: 1px  solid #B4E4FF;
+    margin: 10px 70px;
+    padding: 40px 20px;
+    border-radius: 5px;
+    width: 500px;
+    background-color: white;
+
+}
+
+.description
+{
+    font-family: 'Poppins', sans-serif;
+    color: #3A98B9;
+    font-size: 20px;
+    text-align: left;
+    margin: 0px 100px;
+}

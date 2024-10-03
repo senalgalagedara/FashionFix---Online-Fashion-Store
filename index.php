@@ -1,4 +1,20 @@
+<?php
+include("config.php");
+session_start(); 
 
+if(!isset($_SESSION)){
+    echo "Session has not been started!";
+    exit();
+}
+
+else if(isset($_SESSION['email'])){
+    $email = $_SESSION['email'];
+    $id = $_SESSION['User_Id'];
+    echo "<p style='black:white;font-size:13px;'> You're logged in as $email $id</p>";
+} else {
+echo"meka wada nh"; 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,36 +33,17 @@
 
   </head>
 <body>
-<?php
-include("config.php");
-session_start();  // Start the session
-
-// Debugging: Check if session has been started and session variables are available
-if(!isset($_SESSION)){
-    echo "Session has not been started!";
-    exit();
-}
-
-// Check if the user is logged in
-if(isset($_SESSION['email'])){
-    $email = $_SESSION['email'];
-    echo "<p style='color:white;font-size:13px;'> You're logged in as $email </p>";
-} else {
-    // Debugging: Check if session variables are not being set
-    echo "Session email not found!";
-    // Redirect to index if no session is found
-    exit();
-}
-?>
 
 <?php 
  include("src/header.html")
 ?>
     <hr>
+    
+
 
     <header>
         <container class="slide">
-            <img src="src/img/slide2.jpg" alt="">
+            <img src="src/img/slide2.jpg" height="100px" alt="">
         </container>
         <container class="slide"></container>
         <container class="slide"></container>
@@ -79,14 +76,247 @@ if(isset($_SESSION['email'])){
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque odit assumenda maxime neque tempora et quo unde cumque ratione hic aperiam, dignissimos ab doloremque veniam modi, qui impedit alias ipsam?</p>
     </div>
 
-    <div class="boxes">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+    <div class="section" >
+        <div class="space">
+        <h2 id="newarrivals">NEW ARRIVALS</h2>
+        </div>
+        <div class="subsection">
+            
+            <div class="box active">
+                <a href="product1.html">
+                <div class="minibox">
+                <img src="img/men/men1.jpg" alt="Hustle Men's Short Sleeve Over Size Casual Tee" class="subimg"> 
+                <div>
+                    <p class="price">Rs 2350.00</p>
+                    <p class="description">Hustle Men's Short Sleeve Over Size Casual Tee</p>
+                    <p class="ava"><li class="avay">In Stock</li></p>
+                </div>
+                </div></a>
+            </div>
+
+            <div class="box">
+                <a href="#">
+                <div class="minibox disabled">
+                <img src="img/women/women1.jpg" alt="Andina Women's Offlice Dress" class="subimg">
+
+                <div>
+                    <p class="price">Rs 4290.00</p>
+                    <p class="description">Andina Women's Offlice Dress</p>
+                    <p class="ava"><li class="avay">In Stock</li></p>
+                </div>
+                </div></a>
+            </div>
+
+            <div class="box">
+                <a href="#">
+                <div class="minibox disabled">
+                <img src="img/men/men3.jpg" alt="Hustle Men's Long Sleeve Over Size Casual Tee" class="subimg">
+                
+                <div>
+                    <p class="price">Rs 2350.00</p>
+                    <p class="description">Hustle Men's Long Sleeve Over Size Casual Tee</p>
+                    <p class="ava"><li class="avay">In Stock</li></p>
+                </div>
+                </div></a>
+            </div>
+        </div>
+
     </div>
 
-    <hr>
+    <div class="section">
+        <div class="space">
+        <h2 id="promotions">PROMOTIONS</h2>
+        </div>
+        <div class="subsection">
 
+            <div class="box">
+                <a href="#">
+                <div class="minibox disabled">
+                    <img src="img/women/women5.jpg" alt="Hustle Monochromatic Short Sleeve Oversized Hoodie" class="subimg">
+    
+                    <div>
+                        <p class="price"><span class="promo">Rs 4290.00</span><br>Rs 3900.00 </p>
+                        <p class="description">Hustle Monochromatic Short Sleeve Oversized Hoodie</p>
+                        <p class="ava"><li class="avay">In Stock</li></p>
+                    </div>
+                    </div></a>
+            </div>
+
+            <div class="box">
+                <a href="#">
+                <div class="minibox disabled">
+                    <img src="img/women/women6.jpg" alt="Modano Women's Sleeve Less Party Dress" class="subimg">
+    
+                    <div>
+                        <p class="price"><span class="promo">Rs 4150.00</span><br>Rs 3800.00 </p>
+                        <p class="description">Modano Women's Sleeve Less Party Dress</p>
+                        <p class="ava"><li class="avay">In Stock</li></p>
+                    </div>
+                    </div></a>
+            </div>
+
+            <div class="box">
+                <a href="#">
+                <div class="minibox disabled">
+                    <img src="img/men/men5.jpg" alt="Andina Women's Offlice Dress" class="subimg">
+    
+                    <div>
+                        <p class="price"><span class="promo">Rs 2190.00</span><br>Rs 1900.00 </p>
+                        <p class="description">King Street Men's Short Sleeve Casual</p>
+                        <p class="ava"><li class="avay">In Stock</li></p>
+                    </div>
+                    </div></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <div class="space">
+        <h2 id="men">Men's clothing</h2>
+        </div>
+        <div class="subsection">
+
+            <div class="box active">
+                <a href="product1.html">
+                <div class="minibox">
+                <img src="img/men/men1.jpg" alt="Hustle Men's Short Sleeve Over Size Casual Tee" class="subimg">
+                
+                <div>
+                <p class="price">Rs 2350.00</p>
+                <p class="description">Hustle Men's Short Sleeve Over Size Casual Tee</p>
+                <p class="ava"><li class="avay">In Stock</li></p>
+                </div>
+                </div></a>
+            </div>
+
+            <div class="box">
+                <a href="#">
+                <div class="minibox disabled">
+                <img src="img/men/men3.jpg" alt="Hustle Men's Long Sleeve Over Size Casual Tee" class="subimg">
+                
+                <div>
+                    <p class="price">Rs 2350.00</p>
+                    <p class="description">Hustle Men's Long Sleeve Over Size Casual Tee</p>
+                    <p class="ava"><li class="avay">In Stock</li></p>
+                </div>
+                </div></a>
+            </div>
+
+            <div class="box">
+                <a href="#">
+                <div class="minibox disabled">
+                <img src="img/men/men4.jpg" alt="King Street Men's Long Sleeve Casual Shirt" class="subimg">
+                
+                <div>
+                    <p class="price">Rs 2350.00</p>
+                    <p class="description">King Street Men's Long Sleeve Casual Shirt</p>
+                    <p class="ava"><li class="avan">Sold Out</li></p>
+                </div>
+                </div></a>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="section">
+        <div class="space">
+        <h2 id="women">Women's clothing</h2>
+        </div>
+        <div class="subsection">
+
+            <div class="box">
+                <a href="#">
+                <div class="minibox disabled">
+                <img src="img/women/women1.jpg" alt="Andina Women's Offlice Dress" class="subimg">
+
+                <div>
+                    <p class="price">Rs 4290.00</p>
+                    <p class="description">Andina Women's Offlice Dress</p>
+                    <p class="ava"><li class="avay">In Stock</li></p>
+                </div>
+                </div></a>
+            </div>
+
+            <div class="box">
+                <a href="#">
+                <div class="minibox disabled">
+                <img src="img/women/women2.jpg" alt="Envogue Women's Sleeve Less Office Top" class="subimg">
+
+                <div>
+                    <p class="price">Rs 2290.00</p>
+                    <p class="description">Envogue Women's Sleeve Less Office Top</p>
+                    <p class="ava"><li class="avay">In Stock</li></p>
+                </div>
+                </div></a>
+            </div>
+
+            <div class="box">
+                <a href="#">
+                <div class="minibox disabled">
+                <img src="img/women/women4.jpg" alt="Envogue Women's Office Skirt" class="subimg">
+
+                <div>
+                    <p class="price">Rs 2990.00</p>
+                    <p class="description">Envogue Women's Office Skirt</p>
+                    <p class="ava"><li class="avan">Sold Out</li></p>
+                </div>
+                </div></a>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="section">
+        <div class="space">
+        <h2 id="kids">Kids's clothing</h2>
+        </div>
+        <div class="subsection">
+            <div class="box">
+                <a href="#">
+                <div class="minibox disabled">
+                    <img src="img/kids/kids1.jpg" alt="Ozone Kids Girls Casual Frock" class="subimg">
+                
+                <div>
+                    <p class="price">Rs 2150.00</p>
+                    <p class="description">Ozone Kids Girls Casual Frock</p>
+                    <p class="ava"><li class="avan">Sold Out</li></p>
+                </div>
+                </div></a>
+            </div>
+
+            <div class="box">
+                <a href="#">
+                <div class="minibox disabled">
+                    <img src="img/kids/kids2.jpg" alt="Core Basics Kids Boys Casual T-Shirt" class="subimg">
+                
+                <div>
+                <p class="price">Rs 850.00</p>
+                <p class="description">Core Basics Kids Boys Casual T-Shirt</p>
+                <p class="ava"><li class="avay">In Stock</li></p>
+                </div>
+                </div></a>
+
+            </div>
+
+            <div class="box ">
+                <a href="#">
+                <div class="minibox disabled">
+                    <img src="img/kids/kids3.jpg" alt="" class="subimg">
+                
+                <div>
+                    <p class="price">Rs 850.00</p>
+                    <p class="description">Core Kids Boys Casual T-Shirt</p>
+                    <p class="ava"><li class="avay">In Stock</li></p>
+                </div>
+                </div></a>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="space">
+    </div>
     <div class="title">
         <h1>Brands</h1>
     </div>

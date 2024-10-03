@@ -1,4 +1,30 @@
+<?php
+include("config.php");
+session_start(); 
 
+if(!isset($_SESSION)){
+    echo "Session has not been started!";
+    exit();
+}
+
+if(isset($_SESSION['email'])){
+    $sql = "SELECT * FROM user_signin WHERE email =?;";
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_bind_param($stmt, 's', $email);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    $row = mysqli_fetch_assoc($result);
+
+    $email = $_SESSION['email'];
+    $id = $_SESSION['User_Id'];
+
+    echo "<p style='color:black;font-size:13px;'> You're logged in as $email  $id</p>";
+} else {
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,122 +56,85 @@ include("src/header.html");
 <table>
     <tr>
     <tbody>
-        <?php
-        include ("config.php");
-    
-        $sql = 
-        "   SELECT user_signin.User_Id, user_signin.username, user_signin.email, user_details.first_name, 
-                user_details.last_name, user_details.address, user_details.phone_number
-            FROM user_signin
-            INNER JOIN user_details ON user_signin.User_Id = user_details.User_Id;
-        ";
+    <?php
+include("config.php");
+
+$userId = $_SESSION['User_Id'];  // Make sure session is started and the user is authenticated
+
+$sql = "
+    SELECT user_signin.User_Id, user_signin.username, user_signin.email, 
+           user_details.first_name, user_details.last_name, 
+           user_details.address, user_details.phone_number
+    FROM user_signin
+    INNER JOIN user_details ON user_signin.User_Id = user_details.User_Id
+    WHERE user_signin.User_Id = '$userId';
+";
 
 $result = mysqli_query($conn, $sql);
 
-        if($result) {
-            
-            while($row = mysqli_fetch_assoc($result)) {
-   
-                $id = $row['User_Id'];
-                $username = $row['username'];
-                $fName = $row['first_name'];
-                $lName = $row['last_name'];
-                $address = $row['address'];
-                $cNo = $row['phone_number'];
-                $email = $row['email'];
-    
-        echo "   
-        <form action ='' method = 'post'>
-            <tr>
-                <th>Account Information</th>
-            </tr>
-            <tr>
-                <td>User Id</td>
-                <td><input type='text' name='User_Id' placeholder='$id'></td>
-            </tr>                       
-            <tr>
-                <td>Username</td>
-                <td><input type='text' name='username' placeholder='$username'></td>
-            </tr>
-            <tr>
-                <td>First Name</td>
-                <td><input type='text' name='first_name' placeholder='$fName'></td>
-            </tr>
-            <tr>
-                <td>Last Name</td>
-                <td><input type='text' name='last_name' value='$lName'></td>
-            </tr>
-            <tr>
-                <td>Address</td>
-                <td><input type='text' name='address' value='$address'></td>
-            </tr>
-            <tr>
-                <td>Phone Number</td>
-                <td><input type='text' name='phone_number' value='$cNo'></td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td><input type='text' name='email' value='$email'></td>
-            </tr>
-            <tr>
-                <td>
-                <button name='update'>Update</button>
-                </td>
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $id = $row['User_Id'];
+        $username = $row['username'];
+        $fName = $row['first_name'];
+        $lName = $row['last_name'];
+        $address = $row['address'];
+        $cNo = $row['phone_number'];
+        $email = $row['email'];
 
-
-                <td>
-                <button name ='delete'>Delete</button>
-                </td>
-".
-
-include ("config.php");
-if(isset($_POST['update']) )
-{
-    $username = $_POST['username'];
-    $fName = $_POST['first_name'];
-    $lName = $_POST['last_name'];
-    $address = $_POST['address'];
-    $cNo = $_POST['phone_number'];
-    $email = $_POST['email'];
-
-    $sql = "UPDATE user_details SET username='$username', first_name='$fName',last_name='$lName', address ='$address' ,email='$email',phone_number='$cNo' WHERE User_Id = '$id'";    
-    $sql1 = "UPDATE user_signin SET username='$username',email='$email' WHERE User_Id = '$id'";
-
-    $result = $conn->query($sql);
-    $result2 = $conn->query($sql1);
-
-    if($result === TRUE AND $result2 === TRUE)    
-    {
-    }
-    else{
-        echo ("meka wada nh");
-    }
-
-}else{}
-if(isset($_POST['delete'])){
-    $id = $_POST['User_Id'];
-
-    $sql = "DELETE FROM user_details,user_signin WHERE user_details.User_Id = '$id' AND user_signin.User_Id = '$id";
-
-    $result = $conn->query($sql);
-
-    if($result === TRUE){
-        echo("meka wada");
-    }
-    else{
-echo("mwka wada nhh 2 pw"   );    
-}
-};"
-            </tr>
+        echo "
+        <form action='updatedetails.php' method='post'>
+            <table>
+                <tr>
+                    <th colspan='2'>Account Information</th>
+                </tr>
+                <tr>
+                    <td>User Id</td>
+                    <td><input type='text' name='User_Id' value='$id' readonly></td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td><input type='text' name='username' value='$username'></td>
+                </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td><input type='text' name='first_name' value='$fName'></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type='text' name='last_name' value='$lName'></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input type='text' name='address' value='$address'></td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td><input type='text' name='phone_number' value='$cNo'></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type='text' name='email' value='$email'></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type='submit' name='update'>Update</button>
+                    </td>
+                    <td>
+                        <button type='submit' name='delete' formaction='deleteuser.php'>Delete</button>
+                    </td>
+                    <td>
+                    <button type='submit' name='logout' formaction='logout.php'>log out</button>
+                    </td>
+                </tr>
+            </table>
         </form>";
     }
 } else {
     echo "Error fetching details.";
 }
-
-                
-
 ?>
+
 </tr>
 </tbody>
 </table>
