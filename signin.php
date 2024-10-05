@@ -8,11 +8,16 @@ if(isset($_POST['submitsignin'])){
 
     $sql = "INSERT INTO user_signin(User_Id,username,email,passwordd) VALUES('','$uname','$uemail','$pw')";
     $sql2 = "INSERT INTO user_details(User_Id,username,first_name,last_name,address,phone_number,email) VALUES('','$uname','','','','','$uemail')";
+    $sql3 = "INSERT INTO shipping_details(User_Id,first_name,last_name,address,city,district,country,email) VALUES('','','','','','','','$uemail')";
+    $sql4 = "INSERT INTO payment_details(User_Id,card_number,card_name,exp_date,exp_month,security_no,email) VALUES('','','','','','','$uemail')";
 
     $result = $conn->query($sql);
     $result2 = $conn->query($sql2);
+    $result3 = $conn->query($sql3);
+    $result4 = $conn->query($sql4);
 
-    if($result === TRUE AND $result2 ===TRUE)
+
+    if($result === TRUE AND $result2 ===TRUE AND $result3 === TRUE AND $result4 === TRUE)
     {
         header("location:index.php");
     }

@@ -16,7 +16,7 @@
   
 </head>
 <body>
-    <div style="position: fixed !important; width: 100%; margin:-8px 0px; padding: 0px;">
+    <div>
         <div class="header">
             <div class="headerbox">
                 <a href="index.php"><img src="src/logo1.png" alt="fashionfix logo" class="logoimg"></a></div>
@@ -36,12 +36,38 @@
                 <div class="signin">
                     <a href="signin.php" class="signfont">Sign Up</a>
                 </div>
-                <div class="login">
-                   <span class="material-symbols-outlined" style="font-size: 20px;margin: auto; border: 2px solid white; border-radius: 20px; text-align: center;">
+                <?php
+include("config.php");
+session_start(); 
+
+if(!isset($_SESSION)){
+    echo "<div class='login'>
+                   <span class='material-symbols-outlined' style='font-size: 20px;margin: auto; border: 2px solid white; border-radius: 20px; text-align: center;'>
                     person
                     </span> 
-                    <a href="login.php" style="margin: auto; font-family: 'Roboto Condensed', sans-serif !important; font-size: 15px; font-weight: 500; padding-right: 3px; color: white; text-align: center;">Log In</a>
-                </div>
+                    <a href='login.php' style='margin: auto; font-family: 'Roboto Condensed', sans-serif !important; font-size: 15px; font-weight: 500; padding-right: 3px; color: white; text-align: center;'>Log In</a>
+                </div>";
+    exit();
+}
+
+else if(isset($_SESSION['email'])){
+    $email = $_SESSION['email'];
+    $id = $_SESSION['User_Id'];
+    echo "<div class='login'>
+                   <span class='material-symbols-outlined' style='font-size: 20px;margin: auto; border: 2px solid white; border-radius: 20px; text-align: center;'>
+                    person
+                    </span> 
+                    <a href='useraccount.php' style='margin: auto; font-family: 'Roboto Condensed', sans-serif !important; font-size: 15px; font-weight: 500; padding-right: 3px; color: white; text-align: center;'>Welcome $email</a>
+                </div>";
+} else {
+    echo "<div class='login'>
+    <span class='material-symbols-outlined' style='font-size: 20px;margin: auto; border: 2px solid white; border-radius: 20px; text-align: center;'>
+     person
+     </span> 
+     <a href='login.php' style='margin: auto; font-family: 'Roboto Condensed', sans-serif !important; font-size: 15px; font-weight: 500; padding-right: 3px; color: white; text-align: center;'>Log In</a>
+ </div>"; 
+}
+?>
                 
             </div>
         </div>

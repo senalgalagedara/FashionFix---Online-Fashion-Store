@@ -2,18 +2,18 @@
 include("config.php");
 
 if(isset($_POST['addproduct'])){
+
     $colour = $_POST['colour'];
     $size = $_POST['size'];
     $quentity = $_POST['quentity'];
-    $price = $_POST['price'];
 
-    $sql = "INSERT INTO order_details(product_id,colour,size,quentity,price) VALUES ('','$colour','$size','$quentity','$price')";
+    $sql = "INSERT INTO order_details(product_id,colour,size,quentity,price) VALUES ('1','$colour','$size','$quentity','2300.00')";
 
     $result = $conn->query($sql);
 
     if($result === TRUE)
     {
-        header("location:index.php");
+        header("location:orderdetails.php");
     }
     else{
         die(mysqli_error($conn));
@@ -21,7 +21,6 @@ if(isset($_POST['addproduct'])){
 }
 
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -43,43 +42,42 @@ if(isset($_POST['addproduct'])){
 </head>
 <body>
     <?php
-include("src/header.html");
+include("src/header.php");
 
 ?>
 
-<section class="product" style="margin-top: 50px;">
+<section class="product" style="margin-top: -35px;">
     <div class="main">
         <div class="productimg">
                 <img src="img/men/product1.webp">
         </div>
 
         <form class="productbuy" action="" method="post">
-            <p class="productname">Hustle Men's Short Sleeve Over Size Casual Tee
-                <input type="text" name="product_id"  value="101" disabled></p>
+            <p class="productname">Hustle Men's Short Sleeve Over Size Casual Tee</p>
             <p class="brandname">Hustle</p>
-
-            <hr class="line">
 
             <p class="productprice">
                 <span class="text">Colour : </span></p>
-                <input class="color" name="colour" value="pink">
+                                     <input type="checkbox" class="color" name="colour" value="pink">
                 
-            <p class="productprice"><span class="text">Size : </span></p>
+            <p class="productprice">
+                <span class="text">Size : </span>
+            </p>
             <div class="sizebtn">
-            <input type="radio" class="size" name="size" value="small">S</input>
-            <input  type="radio" class="size" name="size" value="mediam">M</input>
-            <input  type="radio" class="size" name="size" value="large">L</input> 
+                                    <input type="radio" class="size" name="size" value="small">S</input>
+                                    <input  type="radio" class="size" name="size" value="mediam">M</input>
+                                    <input  type="radio" class="size" name="size" value="large">L</input> 
             </div>
             <p class="productprice">
                 <span class="text">Price : </span>
-                <input type="number" name="price" value="Rs.2350.00" disabled>
+                                    <p>Rs: 2300.00</p>
             </p>
             <p class="productprice">
                 <span class="text">Quantity : </span>
-                <input type="number" name="quentity" class="Quantity">
+                                    <input type="number" name="quentity" class="Quantity">
             </p>
             <button class="btn" name="addproduct" >
-                <a href="orderdetails.php">Add to cart</a>
+                        Add to cart
             </button>
         </form>
         <div>
@@ -100,7 +98,6 @@ include("src/header.html");
 </section>
 
 
-<hr> 
 <?php
 include("src/footer.html");
 

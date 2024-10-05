@@ -13,11 +13,17 @@ if(isset($_POST['update']) )
 
     $sql = "UPDATE user_details SET username='$username', first_name='$fName',last_name='$lName', address ='$address' ,email='$email',phone_number='$cNo' WHERE User_Id = '$id'";    
     $sql1 = "UPDATE user_signin SET username='$username',email='$email' WHERE User_Id = '$id'";
+    $sql3 = "UPDATE  shipping_details SET first_name='$fName',last_name= '$lName',address ='$address'WHERE User_Id = '$id'";
+    $sql4 = "UPDATE  payment_details SET email='$email' WHERE User_Id = '$id'";
 
     $result = $conn->query($sql);
     $result2 = $conn->query($sql1);
+    $result3 = $conn->query($sql3);
+    $result4 = $conn->query($sql4);
 
-    if($result === TRUE AND $result2 === TRUE)    
+
+
+    if($result === TRUE AND $result2 === TRUE AND $result3 === TRUE AND $result4 === TRUE)    
     {
         header("location:useraccount.php");
     }

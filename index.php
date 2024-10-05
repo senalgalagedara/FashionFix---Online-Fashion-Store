@@ -1,20 +1,4 @@
-<?php
-include("config.php");
-session_start(); 
 
-if(!isset($_SESSION)){
-    echo "Session has not been started!";
-    exit();
-}
-
-else if(isset($_SESSION['email'])){
-    $email = $_SESSION['email'];
-    $id = $_SESSION['User_Id'];
-    echo "<p style='black:white;font-size:13px;'> You're logged in as $email $id</p>";
-} else {
-echo"meka wada nh"; 
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,9 +17,8 @@ echo"meka wada nh";
 
   </head>
 <body>
-
 <?php 
- include("src/header.html")
+ include("src/header.php")
 ?>
     <hr>
     
@@ -83,7 +66,7 @@ echo"meka wada nh";
         <div class="subsection">
             
             <div class="box active">
-                <a href="product1.html">
+                <a href="product1.php">
                 <div class="minibox">
                 <img src="img/men/men1.jpg" alt="Hustle Men's Short Sleeve Over Size Casual Tee" class="subimg"> 
                 <div>

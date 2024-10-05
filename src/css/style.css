@@ -345,7 +345,7 @@ footer
 }
 .bodyall
 {
-    margin: 112px auto 0px;
+    margin:0px ;
     width: 100%;
     background-color: red;
     display: flex;
@@ -368,4 +368,12 @@ footer
     margin: auto;
     background-color: aqua;
     display: block !important;
+}
+.useraccline
+{
+    margin:auto;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 100px !important;
+    z-index: 3 ;
 }

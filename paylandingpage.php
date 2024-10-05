@@ -1,0 +1,1 @@
+// order details and shipping info and payment details tables valus delete krnn
