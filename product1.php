@@ -46,7 +46,7 @@ include("src/header.php");
 
 ?>
 
-<section class="product" style="margin-top: -35px;">
+<section class="product" style="margin-top: -35px; background-color:#FFF3E0;">
     <div class="main">
         <div class="productimg">
                 <img src="img/men/product1.webp">
@@ -58,19 +58,19 @@ include("src/header.php");
 
             <p class="productprice">
                 <span class="text">Colour : </span></p>
-                                     <input type="checkbox" class="color" name="colour" value="pink">
+                            <input type="checkbox" class="colorrr" name="colour" value="pink">
                 
             <p class="productprice">
                 <span class="text">Size : </span>
             </p>
             <div class="sizebtn">
-                                    <input type="radio" class="size" name="size" value="small">S</input>
-                                    <input  type="radio" class="size" name="size" value="mediam">M</input>
-                                    <input  type="radio" class="size" name="size" value="large">L</input> 
+                                    <input type="radio" class="size" name="size" value="small">Small</input><br>    
+                                    <input  type="radio" class="size" name="size" value="mediam">Mediam</input><br> 
+                                    <input  type="radio" class="size" name="size" value="large">Large</input> 
             </div>
             <p class="productprice">
-                <span class="text">Price : </span>
-                                    <p>Rs: 2300.00</p>
+                <span class="text">Price : <span class="price" style="color: black; font-size:18px;">Rs. 2300.00</span></span>
+                                    
             </p>
             <p class="productprice">
                 <span class="text">Quantity : </span>

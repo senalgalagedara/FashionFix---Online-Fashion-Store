@@ -20,7 +20,6 @@ if(isset($_SESSION['email'])){
     $email = $_SESSION['email'];
     $id = $_SESSION['User_Id'];
 
-    echo "<p style='color:black;font-size:16px; margin:0px; '> You're logged in as $email</p>";
 } else {
 
 }
@@ -40,7 +39,7 @@ if(isset($_SESSION['email'])){
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
-<body>
+<body style="background-image: url('img/userbg.jpg'); background-size:cover;;">
 <div>
         <div class="header">
             <div class="headerbox">
@@ -99,14 +98,7 @@ if(isset($_SESSION['email'])){
         </nav>
 </div>
 <div >
-    <div class="widthall">
-        <div class="cdetails">
-            <h2>Customer details</h2>
-            <p>Username</p>
-            <p>Logout</p>
-            <img src="" alt="Profile pic">
-        </div>
-        <div class="accinfo">
+<h2 id="newarrivals" class="topic" style="margin-top: 40px;">Account Information</h2>
 <table>
     <tr>
     <tbody>
@@ -137,48 +129,48 @@ if ($result) {
         $email = $row['email'];
 
         echo "
-        <form action='updatedetails.php' method='post'>
-            <table>
+        <form action='updatedetails.php' method='post'  style='height: 100vh;'>
+            <table class='usertable'>
                 <tr>
-                    <th colspan='2'>Account Information</th>
+                    <th colspan='2'></th>
                 </tr>
                 <tr>
-                    <td>User Id</td>
-                    <td><input type='text' name='User_Id' value='$id' readonly></td>
+                    <td class= 'accdetails'>User Id</td>
+                    <td ><input type='text' name='User_Id' value='$id' class='accint none' readonly></td>
                 </tr>
                 <tr>
-                    <td>Username</td>
-                    <td><input type='text' name='username' value='$username'></td>
+                    <td class= 'accdetails'>Username</td>
+                    <td><input type='text' name='username' class='accint ' value='$username'></td>
                 </tr>
                 <tr>
-                    <td>First Name</td>
-                    <td><input type='text' name='first_name' value='$fName'></td>
+                    <td class= 'accdetails'>First Name</td>
+                    <td><input type='text' name='first_name' class='accint ' value='$fName'></td>
                 </tr>
                 <tr>
-                    <td>Last Name</td>
-                    <td><input type='text' name='last_name' value='$lName'></td>
+                    <td class= 'accdetails'>Last Name</td>
+                    <td><input type='text' name='last_name' class='accint ' value='$lName'></td>
                 </tr>
                 <tr>
-                    <td>Address</td>
-                    <td><input type='text' name='address' value='$address'></td>
+                    <td class= 'accdetails'>Address</td>
+                    <td><input type='text' name='address' class='accint ' value='$address'></td>
                 </tr>
                 <tr>
-                    <td>Phone Number</td>
-                    <td><input type='text' name='phone_number' value='$cNo'></td>
+                    <td class= 'accdetails'>Phone Number</td>
+                    <td><input type='text' name='phone_number' class='accint ' value='$cNo'></td>
                 </tr>
                 <tr>
-                    <td>Email</td>
-                    <td><input type='text' name='email' value='$email'></td>
+                    <td class= 'accdetails'>Email</td>
+                    <td><input type='text' name='email' class='accint ' value='$email'></td>
                 </tr>
                 <tr>
                     <td>
-                        <button type='submit' name='update'>Update</button>
+                        <button type='submit' class='updatebtn' name='update'>Update</button>
                     </td>
                     <td>
-                        <button type='submit' name='delete' formaction='deleteuser.php'>Delete</button>
+                        <button type='submit' class='deletebtn' name='delete' formaction='deleteuser.php'>Delete</button>
                     </td>
                     <td>
-                    <button type='submit' name='logout' formaction='logout.php'>log out</button>
+                    <button type='submit' class='logout' name='logout' formaction='logout.php'>log out</button>
                     </td>
                 </tr>
             </table>

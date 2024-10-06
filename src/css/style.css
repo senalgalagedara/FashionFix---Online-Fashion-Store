@@ -1,6 +1,6 @@
 body
 {
-    background:#fff2df ; 
+    background:#FFFDE7 ; 
     box-sizing: border-box !important;
     overflow-x: hidden !important;
     margin: 0px;
@@ -72,6 +72,7 @@ body
     background-color: white;
     border-radius: 20px;
     margin: auto;
+    margin-right: 10px;
     transition: width 1s, height 1s;
 
 }
@@ -107,8 +108,8 @@ body
 }
 .login
 {
-    width: 70px;
-    height: 22px;
+    width: max-content;
+    height: min-content;
     padding: 10px !important;
     border: 1px solid #ff9e22;
     background-color: #fa8100;
@@ -376,4 +377,246 @@ footer
     height: 50px;
     margin-bottom: 100px !important;
     z-index: 3 ;
+}
+.topic
+{
+    font-family: "Fredoka", sans-serif;
+    width: 100%;
+    margin: auto;
+    display: block;
+    margin-top: 20px !important;
+    padding-top: 2px !important;
+    text-align: center;
+}
+.space
+{
+    margin: 50px 0px;
+}
+.subsection
+{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    }
+.box
+{
+    text-align: center;
+    width: 50%;
+    height: 500px;
+    margin: 5px 10px;
+    padding: 10px 0px;
+}
+
+.minibox
+{
+    border: 1px solid gray;
+    border-radius: 3px;
+    background-color: white;
+    margin: 10px 40px;
+    padding: 10px 20px;
+    height: 490px;
+}
+
+.price
+{
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    color: rgba(36, 216, 240, 0.959);
+    text-align: center;
+}
+
+.promo
+{
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    color: gray;
+    text-decoration: line-through;
+}
+
+.description
+{
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: rgba(240, 36, 223, 0.959);
+}
+.section
+{
+    background-color: #FFECB3;
+    width: 100%;
+    height: 100vh;
+}
+.ava
+{
+    margin-top: -10px;
+}
+
+.avay
+{
+    text-align: left;
+    list-style: disc;
+    color: green;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 20px;
+}
+.accint
+{
+    font-family: 'Poppins', sans-serif;
+    padding: 5px;
+    padding-left:12px;
+    border-radius: 10px;
+    background-color: #FFE0B2;
+    border: #FFB74D solid  2px   ;
+    cursor: text;
+    margin-left: 40px;
+}
+.none
+{
+    border: none;
+    cursor: help;
+}
+.accdetails
+{
+    font-size: 15px;
+    width: 50%;
+    text-align: left !important;
+    padding-left: 60px;
+}
+.usertable
+{
+    margin: auto;
+    font-family: "Fredoka", sans-serif;
+    width: 60%;
+    height: max-content;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: block;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.45);
+    margin-top: 50px !important;
+    margin-bottom: 100px !important;
+    border-radius: 30px;
+
+}
+.updatebtn
+{
+    margin-top: 50px;
+    background-color: #29B6F6;
+    padding: 20px;
+    border:none;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.updatebtn:hover
+{
+    background-color: #81D4FA;
+}
+.deletebtn
+{
+    margin-top: 50px;
+    margin-left: -35px;
+    background-color: #FF7043;
+    padding: 20px;
+    border:none;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.deletebtn:hover
+{
+    background-color: #FF8A65;
+}
+.logout
+{
+    margin-top: 50px;
+    background-color: #90A4AE;
+    padding: 20px;
+    border:none;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.logout:hover
+{
+    background-color: #B0BEC5;
+}
+
+input[type="checkbox"] {
+    width: 50px;
+    height: 50px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: pink;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    margin-top: -20px !important;
+
+    margin-left: 100px;
+}
+input[type="checkbox"]:checked {
+    width: 50px;
+    height: 50px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: rgb(254, 158, 174);
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    margin-top: -20px !important;
+
+    margin-left: 100px;
+}
+.sizebtn
+{
+    margin-top: -30px !important;
+    padding-left: 50px;
+    margin-left: 50px !important;
+}
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+}
+input[type="radio"]:checked {
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    background-color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+
+}
+input[type="radio"]:checked ::after {
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+
+}
+.Quantity
+{
+    width: 40px;
+    height: 30px;
+    font-size: 18px;
+}
+.btn 
+{
+    background-color: #ffaf49;
+    cursor: pointer;
 }

@@ -1,30 +1,4 @@
-<?php
-include("config.php");
-session_start(); 
 
-if(!isset($_SESSION)){
-    echo "Session has not been started!";
-    exit();
-}
-
-if(isset($_SESSION['User_Id'])){
-    $sql = "SELECT * FROM shipping_details WHERE User_Id =?;";
-    $stmt = mysqli_stmt_init($conn);
-    mysqli_stmt_prepare($stmt, $sql);
-    mysqli_stmt_bind_param($stmt, 's', $email);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-
-    $row = mysqli_fetch_assoc($result);
-
-    $email = $_SESSION['email'];
-    $id = $_SESSION['User_Id'];
-
-    echo "<p style='color:black;font-size:16px; margin:0px; '> You're logged in as $email</p>";
-} else {
-
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,63 +16,10 @@ if(isset($_SESSION['User_Id'])){
     <script src='main.js'></script>
 </head>
 <body>
-<div>
-        <div class="header">
-            <div class="headerbox">
-                <a href="index.php"><img src="src/logo1.png" alt="fashionfix logo" class="logoimg"></a></div>
-            <div class="searchbox" style="cursor: pointer;">
-                <span class="material-symbols-outlined">
-                search
-                </span>
-                <input type="text" name="searchbox" id="" class="Stext" placeholder="Search Products...">
-             </div>
-            <div class="headerboxs">
-                <span class="material-symbols-outlined shape" >
-                    favorite
-                </span>
-                <span class="material-symbols-outlined shape">
-                    shopping_cart
-                </span>
-                <div class="signin">
-                    <a href="signin.php" class="signfont">Sign Up</a>
-                </div>  
-                
-            </div>
-        </div>
-    
-        <nav>
-            <ol class="nav">
-                <a href="index.php" class="nostyle"><li class="nostyle">HOME</li></a>
-                <a href="" class="nostyle" style="display: block;"><li class="nostyle">MEN</li></a>
-                <a href="" class="nostyle"><li class="nostyle">WOMEN</li></a>
-                <a href="" class="nostyle"><li class="nostyle">KIDS</li></a>
-                <a href="" class="nostyle"><li class="nostyle">HOME & LIVING</li></a>
-                <a href="" class="nostyle"><li class="nostyle">CONTACT US</li></a>
-                <a href="" class="nostyle"><li class="nostyle">NEED HELP?</li></a>
-            </ol>
-            <!--<div class="navbox" style="display: none;">
-                <div class="nostyle">
-                    <img src="src/.jpg" width="90px" height="200px" style="padding: 20px;" alt="">
-                    <ul style="width: 30%;">
-                        <li class="innernavCap">Clothing</li>
-                        <li class="innernav">T Shirts</li>
-                        <li class="innernav">Hoodies</li>
-                        <li class="innernav">Casual Pants</li>
-                        <li class="innernav">Shorts</li>
-                        <li class="innernav">Formal Shirts</li>
-                    </ul>
-                    <ul style="width: 30%;">
-                        <li class="innernavCap">Accessories</li>
-                        <li class="innernav">Hats & Caps</li>
-                        <li class="innernav">Watch</li>
-                        <li class="innernav">Belt</li>
-                        <li class="innernav">Wallet</li>
-                        <li class="innernav">Footwear</li>
-                    </ul>
-                </div>-->
-            </div>
-        </nav>
-</div>
+<?php
+include("src/header.php");
+
+?>
 
 <h1>
     My Shopping Cart

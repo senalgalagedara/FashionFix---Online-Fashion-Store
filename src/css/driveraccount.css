@@ -1,0 +1,117 @@
+.propic {
+    margin-top: 70px;
+    text-align: center;
+    flex: 1;
+    border: 2px solid black;
+    height: 550px;
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+}
+
+.propic img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #ddd;
+}
+
+.widthall {
+    flex: 3;
+    margin-left: 20px;
+}
+
+.accinfo, .Bnkinfo {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #ffa500;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+table td {
+    font-size: 18px;
+    font-weight: 600;
+    color: orange;
+}
+
+table td:hover {
+    background-color: inherit;
+}
+
+.none:hover {
+    background-color: #ddd;
+}
+
+
+td.none:hover {
+    background-color: inherit; 
+}
+
+table td a {
+    color: red;
+    text-decoration: none;
+}
+
+#up {
+    background-color: lightgreen; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer; 
+}
+
+#up a {
+    color: white; 
+    text-decoration: none; 
+}
+
+#up:hover {
+    background-color: green; 
+}
+
+
+#de {
+    background-color: red; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer; 
+}
+
+#de a {
+    color: white; 
+    text-decoration: none; 
+}
+
+#de:hover {
+    background-color: darkred; 
+}
+
+
+
+
+
