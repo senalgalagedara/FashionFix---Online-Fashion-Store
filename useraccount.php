@@ -105,7 +105,7 @@ if(isset($_SESSION['email'])){
     <?php
 include("config.php");
 
-$userId = $_SESSION['User_Id'];  // Make sure session is started and the user is authenticated
+$userId = $_SESSION['User_Id'];  
 
 $sql = "
         SELECT user_signin.User_Id, user_signin.username, user_signin.email, 

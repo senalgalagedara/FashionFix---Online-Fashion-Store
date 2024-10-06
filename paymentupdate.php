@@ -2,18 +2,24 @@
 include ("config.php");
 
 if(isset($_POST['update']) )
-{
-    $fName = $_POST['card_number'];
-    $lName = $_POST['card_name'];
-    $address = $_POST['exp_date'];
-    $city = $_POST['exp_month'];
-    $district = $_POST['security_no'];
+{   
+    $id = $_POST['User_Id'];
+    $cardNo = $_POST['card_number'];
+    $cname = $_POST['card_name'];
+    $exdate = $_POST['exp_date'];
+    $exmonth = $_POST['exp_month'];
+    $csc = $_POST['security_no'];
     $email = $_POST['email'];
 
-    $sql = "UPDATE payment_details SET card_number='$fName',card_name= '$lName',exp_date ='$address', exp_month = '$city',security_no='$district' WHERE email = '$email'";
+    $sql = "UPDATE payment_details SET 
+    card_number='$cardNo',
+    card_name= '$cname',
+    exp_date ='$exdate',
+    exp_month = '$exmonth',
+    security_no='$csc'
+    WHERE User_Id = '$id'";
 
     $result = $conn->query($sql);
-
 
     if($result === TRUE)    
     {

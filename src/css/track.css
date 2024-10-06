@@ -1,0 +1,152 @@
+.star-rating {
+  display: flex;
+  direction: rtl; /* Ensure stars are in left-to-right order */
+  justify-content: end;
+  gap: 5px;
+}
+
+.star {
+  font-size: 40px;
+  color: lightgray;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.star:hover,
+.star:hover ~ .star {
+  color: #1e1e1e;
+}
+
+input[type="radio"]:checked ~ label {
+  color: #1e1e1e;
+}
+.flex_new {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.colum {
+  flex: 1;
+  padding: 15px;
+}
+
+.map {
+  width: 100%;
+  height: 88vh;
+}
+.map_date {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.topictac {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 35px;
+}
+.main_set_flex {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+.data_track {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.adre_setail_set {
+  margin-top: 25px;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+}
+.bar_sho_set {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.round1 {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #1e1e1e;
+}
+.bar1 {
+  background-color: #1e1e1e;
+  height: 6px;
+  position: relative;
+  right: 5px;
+  top: 4px;
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.round2 {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  right: 18px;
+  position: relative;
+  background-color: #1e1e1e;
+}
+.bar2 {
+  background-color: #1e1e1e;
+  height: 6px;
+  position: relative;
+  right: 20px;
+  top: 4px;
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.round3 {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  right: 28px;
+  position: relative;
+  background-color: #1e1e1e;
+}
+.bar3 {
+  background-color: #1e1e1e;
+  height: 6px;
+  position: relative;
+  right: 30px;
+  top: 4px;
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.round4 {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  right: 32px;
+  position: relative;
+  color: white;
+  border: 2px solid #1e1e1e;
+}
+.status_bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.itembar {
+  display: flex;
+  width: 100px;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 35px;
+  text-align: center;
+}
+.rattopic {
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 500;
+}

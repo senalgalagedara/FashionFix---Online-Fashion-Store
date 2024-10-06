@@ -100,7 +100,6 @@ if(isset($_SESSION['email'])){
             </div>
         </nav>
 </div>
-aaaaaaaaaaaaaaaaaaaa
 <h3>Add payment details</h3>
 <?php
 include("config.php");
@@ -108,9 +107,12 @@ include("config.php");
 $userId = $_SESSION['User_Id']; 
 
 $sql = "
-    SELECT *
-    FROM payment_details,user_details
-    WHERE user_details.User_Id = '$userId';
+    SELECT payment_details.User_Id, payment_details.card_number, payment_details.card_name, 
+           payment_details.exp_date, payment_details.exp_month, payment_details.security_no, 
+           payment_details.email
+    FROM payment_details
+    INNER JOIN user_details ON payment_details.User_Id = user_details.User_Id
+    WHERE payment_details.User_Id = $userId;
 ";
 
 $result = mysqli_query($conn, $sql);
@@ -131,21 +133,22 @@ if ($result) {
 <h2>Choose your payment method</h2>
 
 <p>Card Number</p>
-<input type='number' name='card_number' id='' placeholder='$cardNo'>
+<input type='number' name='User_Id'  value='$id' readonly>
+<input type='number' name='card_number'  placeholder='$cardNo'>
 
 <p>Expire Date</p>
-<input type='number' name='exp_date' id='' placeholder='$exdate'>
+<input type='number' name='exp_date'  placeholder='$exdate'>
 <p>Expire Month</p>
-<input type='number' name='exp_month' id='' placeholder='$exmonth'>
+<input type='number' name='exp_month'  placeholder='$exmonth'>
 
 
 <p>Name on card</p>
-<input type='text' name='card_name' id='' placeholder='$cname'>
+<input type='text' name='card_name'  placeholder='$cname'>
 
 <p>Card security code</p>
-<input type='number' name='security_no' id='' placeholder='$csc'>
+<input type='number' name='security_no'  placeholder='$csc'>
 
-<input type='email' name='email' id='' placeholder='$email'>
+<input type='email' name='email'  placeholder='$email'>
 <button type='submit' name='update'>Update</button>
 </form>
     ";}
@@ -153,6 +156,8 @@ if ($result) {
     echo "Error fetching details.";
 }
 ?>
+
+<a href="checkout.php"><button>back to checkout</button></a>
 
 <?php
     include("src/footer.html");

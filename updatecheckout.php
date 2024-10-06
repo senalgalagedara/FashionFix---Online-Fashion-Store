@@ -15,11 +15,13 @@ if(isset($_POST['update']) )
     first_name='$fName',
     last_name= '$lName',
     address ='$address',
-     city = '$city',
-     district='$district',
-     country = '$country' 
+    city = '$city',
+    district='$district',
+    country = '$country' 
      
      WHERE User_Id = '$id'";
+    
+ 
 
     $result = $conn->query($sql);
 

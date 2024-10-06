@@ -20,7 +20,6 @@ if(isset($_SESSION['email'])){
     $email = $_SESSION['email'];
     $id = $_SESSION['User_Id'];
 
-    echo "<p style='color:black;font-size:13px;'> You're logged in as $email  $id</p>";
 } else {
 
 }
@@ -102,7 +101,7 @@ if(isset($_SESSION['email'])){
         </nav>
 </div>
 
-    <div class="box1" style="margin-top: 100px;">
+    <div class="box1" style="margin-top: 0px;">
         <div class="box2">
             <div class="boxlg">
                 <h3>Shipping Address</h3>
@@ -112,11 +111,13 @@ include("config.php");
 
 $userId = $_SESSION['User_Id'];
 $sql = "
-    SELECT *
-    FROM shipping_details,user_details
-    WHERE user_details.User_Id = '$id';
-"
-;
+    SELECT shipping_details.User_Id, shipping_details.first_name, shipping_details.last_name, shipping_details.address, 
+           shipping_details.city, shipping_details.district, shipping_details.country
+    FROM shipping_details
+    INNER JOIN user_details ON shipping_details.User_Id = user_details.User_Id
+    WHERE shipping_details.User_Id = '$userId';
+";
+
 
 $result = mysqli_query($conn, $sql);
 
@@ -134,7 +135,7 @@ if ($result) {
        
                 <form action = 'updatecheckout.php' method = 'post'>
                     <div >
-                      UserID  <input type='text' class='textbox2' id='' name='User_Id' placeholder='$id'> 
+                      UserID  <input type='text' class='textbox2' id='' name='User_Id' value='$id' readonly> 
                       First Name   <input type='text' class='textbox2' id='' name='first_name'  placeholder=' $fName'>
                       Last Name  <input type='text' class='textbox2' name='last_name' id='' placeholder='$lName'>
                       Address  <input type='text' class='textbox2' name='address' id='' placeholder='$address'>
@@ -180,7 +181,7 @@ if ($result) {
 
         $total = $price*$quentity;
         echo "
-        <form action='deleteproduct.php' method='get'>
+        <form action='' method='get'>
             <table>
     <tr>
         <th>Product</th>
