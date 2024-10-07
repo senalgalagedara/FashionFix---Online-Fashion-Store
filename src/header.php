@@ -18,15 +18,18 @@
 <body>
     <div>
         <div class="header">
-            <div class="headerbox">
-                <a href="index.php"><img src="src/logo1.png" alt="fashionfix logo" class="logoimg"></a></div>
+            <div class="headerbox" style="width: 20%;">
+                
+                <a href="index.php"><img src="src/logo1.png" alt="fashionfix logo" class="logoimg" style="    width: 70%; 
+"></a>
+            </div>
             <div class="searchbox" style="cursor: pointer;">
                 <span class="material-symbols-outlined">
                 search
                 </span>
                 <input type="text" name="searchbox" id="" class="Stext" placeholder="Search Products...">
              </div>
-            <div class="headerboxs">
+            <div class="headerboxs" style="width: 40%;">
                 <span class="material-symbols-outlined shape" >
                     favorite
                 </span>
@@ -36,6 +39,7 @@
                 <div class="signin">
                     <a href="signin.php" class="signfont">Sign Up</a>
                 </div>
+                
                 <?php
 include("config.php");
 session_start(); 

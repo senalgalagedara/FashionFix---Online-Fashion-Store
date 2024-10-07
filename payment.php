@@ -1,30 +1,4 @@
-<?php
-include("config.php");
-session_start(); 
 
-if(!isset($_SESSION)){
-    echo "Session has not been started!";
-    exit();
-}
-
-if(isset($_SESSION['email'])){
-    $sql = "SELECT * FROM user_signin WHERE email =?;";
-    $stmt = mysqli_stmt_init($conn);
-    mysqli_stmt_prepare($stmt, $sql);
-    mysqli_stmt_bind_param($stmt, 's', $email);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-
-    $row = mysqli_fetch_assoc($result);
-
-    $email = $_SESSION['email'];
-    $id = $_SESSION['User_Id'];
-
-    echo "<p style='color:black;font-size:16px; margin:0px; '> You're logged in as $email</p>";
-} else {
-
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +18,7 @@ if(isset($_SESSION['email'])){
 </head>
 <body>
 <div>
-        <div class="header">
+<div class="header">
             <div class="headerbox">
                 <a href="index.php"><img src="src/logo1.png" alt="fashionfix logo" class="logoimg"></a></div>
             <div class="searchbox" style="cursor: pointer;">
@@ -63,6 +37,38 @@ if(isset($_SESSION['email'])){
                 <div class="signin">
                     <a href="signin.php" class="signfont">Sign Up</a>
                 </div>  
+                <?php
+include("config.php");
+session_start(); 
+
+if(!isset($_SESSION)){
+    echo "<div class='login'>
+                   <span class='material-symbols-outlined' style='font-size: 20px;margin: auto; border: 2px solid white; border-radius: 20px; text-align: center;'>
+                    person
+                    </span> 
+                    <a href='login.php' style='margin: auto; font-family: 'Roboto Condensed', sans-serif !important; font-size: 15px; font-weight: 500; padding-right: 3px; color: white; text-align: center;'>Log In</a>
+                </div>";
+    exit();
+}
+
+else if(isset($_SESSION['email'])){
+    $email = $_SESSION['email'];
+    $id = $_SESSION['User_Id'];
+    echo "<div class='login'>
+                   <span class='material-symbols-outlined' style='font-size: 20px;margin: auto; border: 2px solid white; border-radius: 20px; text-align: center;'>
+                    person
+                    </span> 
+                    <a href='useraccount.php' style='margin: auto; font-family: 'Roboto Condensed', sans-serif !important; font-size: 15px; font-weight: 500; padding-right: 3px; color: white; text-align: center;'>Welcome $email</a>
+                </div>";
+} else {
+    echo "<div class='login'>
+    <span class='material-symbols-outlined' style='font-size: 20px;margin: auto; border: 2px solid white; border-radius: 20px; text-align: center;'>
+     person
+     </span> 
+     <a href='login.php' style='margin: auto; font-family: 'Roboto Condensed', sans-serif !important; font-size: 15px; font-weight: 500; padding-right: 3px; color: white; text-align: center;'>Log In</a>
+ </div>"; 
+}
+?>
                 
             </div>
         </div>
@@ -100,7 +106,9 @@ if(isset($_SESSION['email'])){
             </div>
         </nav>
 </div>
-<h3>Add payment details</h3>
+<h1 class="topic">Add payment details</h1>
+<h3 class='topic'>Choose your payment method</h3>
+
 <?php
 include("config.php");
 
@@ -129,27 +137,98 @@ if ($result) {
 
 
         echo "
-<form action='paymentupdate.php' method='post'>
-<h2>Choose your payment method</h2>
-
+<form action='paymentupdate.php' method='post' onsubmit = 'return validatecarddetails()'>
+<table style='width:60%; margin:10px auto; padding: 10px 50px;border-radius: 10px;  background-color:#ffddb0;  display:block; 
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>
+<tr>
+<td>
 <p>Card Number</p>
-<input type='number' name='User_Id'  value='$id' readonly>
-<input type='number' name='card_number'  placeholder='$cardNo'>
+</td>
+<td>
+<input type='number'  name='User_Id'  value='$id' readonly style='display:none;'>
+<input type='number' class='accint' id='cardnum' name='card_number'  placeholder='$cardNo'>
+</td>
+</tr>
 
+<tr>
+<td>
 <p>Expire Date</p>
-<input type='number' name='exp_date'  placeholder='$exdate'>
+</td>
+<td>
+<input type='number' class='accint' id='expdate' name='exp_date'  placeholder='$exdate'>
+</td>
+</tr>
+
+<tr>
+<td>
 <p>Expire Month</p>
-<input type='number' name='exp_month'  placeholder='$exmonth'>
+</td>
+<td>
+<input type='number' class='accint' id='expmonth' name='exp_month'  placeholder='$exmonth'>
+</td>
+</tr>
 
-
+<tr>
+<td>
 <p>Name on card</p>
-<input type='text' name='card_name'  placeholder='$cname'>
+</td>
+<td>
+<input type='text' class='accint' name='card_name'  placeholder='$cname'>
+</td>
+</tr>
 
+<tr>
+<td>
 <p>Card security code</p>
-<input type='number' name='security_no'  placeholder='$csc'>
+</td>
+<td>
+<input type='number' class='accint' id='csc' name='security_no'  placeholder='$csc'>
+</td>
+</tr>
 
-<input type='email' name='email'  placeholder='$email'>
-<button type='submit' name='update'>Update</button>
+<input type='email' name='email'  placeholder='$email' style='display:none;'>
+<tr>
+<td>
+<button type='submit' class='updatebtnaa' name='update'>Update</button>
+</td>
+</tr>
+</table>
+<script>
+function validatecarddetails()
+{
+    const expmonth = document.getElementById('expmonth').value;
+    const csc = document.getElementById('csc').value;
+  const expdate = document.getElementById('expdate').value;
+  const cardnumber = document.getElementById('cardnum').value;
+
+if (cardnumber.length < 16) 
+{
+alert('Card number must have 16 digits');
+return false; 
+    if(expdate.length>31)
+    {
+    alert('Enter valid date');
+    return false; 
+    }
+        if(expmonth.length>12)
+        {
+        alert('Enter valid month');
+        return false;
+        }
+            if(expmonth.csc>4)
+            {
+            alert('Enter valid month');
+            return false; 
+            }
+                if(expmonth.csc>4)
+                {
+                alert('Enter valid month');
+                return false; 
+                }
+    }
+  return true;
+    }
+</script>
 </form>
     ";}
 } else {
@@ -157,11 +236,89 @@ if ($result) {
 }
 ?>
 
-<a href="checkout.php"><button>back to checkout</button></a>
+<div class="box4" style="margin-bottom: 50px;">
+        <button class="retcart" style="    padding: 10px;
+    left: 30px ;
+    background-color: #29B6F6;
+    position: absolute;
+    border: none;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 400 !important;" >
+            <a href="checkout.php">Return To Cart</a>
+        </button>
+        <button class="retcart2" style="    padding: 10px;
+    right: 30px ;
+    margin-bottom:10px;
+    background-color: #ff9e22;
+    position: absolute;
+    border: none;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 400 !important;">
+            <a href="confirmOrder.php" name="payment">Confirm Order</abs>
+        </button>
 
-<?php
-    include("src/footer.html");
-    ?>
-
+    </div>
+    
+<footer>
+        <div class="footerboxes">
+            <div class="footerbox">
+                <img src="src/logo1.png" width="50" height="50" alt="">
+                <p class="para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.?
+                </p>
+                <i style="font-size:24px; color: #000;" class="fa">&#xf16d;</i>
+                <i style="font-size:24px; color: #000; margin-left: 10px;" class="fa">&#xf09a;</i>
+            </div>
+            <div class="footerbox">
+                <ul>
+                    <li class="footerlinkCAP"><a href="">Men</a></li>
+                    <li class="footerlink"><a href="">T Shirt</li>
+                    <li class="footerlink"><a href="">Trousers</li>
+                    <li class="footerlink"><a href="">Shirt</li>
+                </ul>
+            </div>
+            <div class="footerbox">
+                <ul>
+                    <li class="footerlinkCAP"><a href="">WOMEN</a></li>
+                    <li class="footerlink"><a href="">Tshirt</a></li>
+                    <li class="footerlink"><a href="">Jeans</a></li>
+                    <li class="footerlink"><a href="">Dresses</a></li>
+                </ul>
+            </div>
+            <div class="footerbox">
+                <ul>
+                    <li class="footerlinkCAP"><a href="">KIDS</a></li>
+                    <li class="footerlink"><a href="">Tshirt</a></li>
+                    <li class="footerlink"><a href="">Pants</a></li>
+                    <li class="footerlink"><a href="">Toys</a></li>
+                </ul>
+            </div>
+            <div class="footerbox">
+                <ul>
+                    <li class="footerlinkCAP"><a href="">HOME & LIVING</a></li>
+                    <li class="footerlink"><a href="">Decor</a></li>
+                    <li class="footerlink"><a href="">Dining</a></li>
+                    <li class="footerlink"><a href="">Pillow</a></li>
+                </ul>
+            </div>
+            <div class="footerbox">
+                <ul>
+                    <li class="footerlinkCAP"><a href="">CONTACT US</a></li>
+                    <li class="footerlink">0714983657</li>
+                    <li class="footerlink">ADDress</li>
+                    <li class="footerlink">fashionfix@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+    
+        <hr style="margin: 0px; color: white;">
+        <div style="display: flex; background-color: #ffaf49;">
+            <div class="width60">Copyright  2024 FashionFix. All rights reserverd.</div>
+           <hr>
+            <div class="width40"> Terms & Condition | Privacy Policy</div>
+    
+        </div>
+                
+    </footer>
 </body>
 </html>

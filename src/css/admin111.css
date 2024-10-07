@@ -1,0 +1,325 @@
+/* General Page Styles */
+body {
+    background: #fff2df;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Header Styling */
+.header {
+    background-color: #ffaf49;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Keep the header fixed at the top */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Toggle Button in the Header */
+.sidebar-toggle {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.sidebar-toggle .material-symbols-outlined {
+    font-size: 32px;
+}
+
+/* Container to hold sidebar and main content */
+.main-container {
+    display: flex;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    position: fixed;
+    top: 96px; /* Adjusted to align with the header */
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar .admin-profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .admin-profile .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.sidebar h2,
+.sidebar p {
+    margin: 5px 0;
+    color: #ffaf49;
+}
+
+.sidebar ul.menu {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.sidebar ul.menu > li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul.menu > li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar ul.menu > li a:hover {
+    color: #ffaf49;
+}
+
+.sidebar ul.menu .submenu {
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+.sidebar ul.menu .submenu li a {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.sidebar ul.menu .submenu li a:hover {
+    color: #ffaf49;
+}
+
+/* Main Content Styling */
+.customer-complaints {
+    margin-left: 270px; /* When sidebar is expanded */
+    width: calc(100% - 270px); /* When sidebar is expanded */
+    padding: 20px; /* General padding for table */
+    margin-top: 46px; /* Ensure this matches the header height */
+    overflow-y: auto;
+    transition: margin-left 0.3s ease, width 0.3s ease; /* Smooth transition */
+}
+
+.customer-complaints.centered {
+    margin-left: 100px; /* Center when sidebar is collapsed */
+    width: 100%; /* Full width when sidebar is collapsed */
+}
+
+/* Table Styles */
+.cc-table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.cc-table caption {
+    caption-side: top;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffaf49;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.cc-table th,
+.cc-table td {
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+}
+
+.cc-table th {
+    background-color: #ffaf49;
+    color: white;
+    font-weight: bold;
+}
+
+.cc-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.cc-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Action Buttons Styling */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-action {
+    background-color: #ffaf49;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-action:hover {
+    background-color: #e99e30;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    padding: 0px;
+    width: 100%;
+    margin: auto;
+    background-color: #ffaf49;
+}
+
+.headerbox {
+    text-align: center;
+    margin: 0px;
+    width: 30%;
+}
+
+.headerbox img {
+    display: inline-block;
+}
+
+.logoimg {
+    width: 200px;
+    margin: auto 10px;
+    height: 90px;
+}
+
+.headerboxs {
+    width: 27%;
+    margin: auto;
+    display: inline-flex;
+    padding: 0px;
+    margin-left: 600px;
+}
+
+.note,
+.acc {
+    font-size: 30px !important;
+    margin: auto;
+    display: block;
+    color: white;
+    padding: 10px;
+    font-weight: 600 !important;
+}
+
+.note:hover {
+    color: white;
+    background-color: #f47100;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.acc {
+    font-size: 50px !important;
+}
+
+.acc:hover {
+    color: white;
+    background-color: #f47100;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Footer Section */
+.footerboxes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: white;
+    height: 180px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footerbox {
+    margin: auto;
+}
+
+.footerlink,
+a {
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none !important;
+    color: rgb(29, 29, 29);
+    font-size: 14px;
+}
+
+.footerlinkCAP {
+    font-weight: 700;
+    font-size: 50px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffaf49;
+    color: white;
+    font-size: 14px;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    .acc {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .acc {
+        font-size: 30px;
+    }
+}
+
+/* Width Management */
+.width60 {
+    font-size: 12px;
+    text-align: left;
+    width: 75%;
+    padding: 10px;
+    color: white;
+}
+
+.width40 {
+    font-size: 12px;
+    text-align: right;
+    width: 25%;
+    padding: 10px 20px;
+    color: white;
+}
+
+/* Paragraph Styling */
+.para {
+    font-size: 12px;
+    color: black;
+}

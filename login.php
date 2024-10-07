@@ -81,12 +81,24 @@
             </div>
         </nav>
 <div class="bodysite">
-    <form class="signinbox" style="height: 450px;" method="post" action="authenticate.php">
+    <form class="signinbox" style="height: 450px;" method="post" action="authenticate.php" onsubmit="return validateEmail()">
         <h2 class="headd">Login to my Account</h2>
         <p class="signpara">Enter your E-mail and Password</p>
 
         <p class="signparaa">E-mail</p>
-        <input class="inputbox" type="text" name="email" id="">
+        <input class="inputbox" type="text" id='email' name="email" id="">
+        <script>
+            function validateEmail(){
+                const email = document.getElementById("email").value;
+
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert("Please enter a valid email address.");
+                    return false; // Prevent form submission
+                }
+            }
+             
+        </script>
 
         <p class="signparaa">Password</p>
         <input class="inputbox" type="password" name="passwordd" id="">
@@ -101,6 +113,10 @@
         <p class="para" style="text-align: center; margin-top: 20px;">
             New Customer?
             <a href="signin.php" style="color: blue;">Create your account</a>
+        </p>
+        <p class="para" style="text-align: center; margin-top: 0px;">
+            Driver Login
+            <a href="driver_register.php" style="color: blue;">click here</a>
         </p>
     </form>
 </div>

@@ -1,0 +1,96 @@
+*{
+    font-family: 'Poppins';
+}
+
+.div{
+    margin-top: 200px;
+    padding: 0px 100px;
+    margin-bottom: 100px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.line{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.images{
+    width: 355px;
+    height: 500px;
+    border: 0;
+    margin-bottom: 40px;
+    background-color: white;
+    border-radius: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.line img{
+    margin: 35px 70px;
+    width: 200px;
+    height: auto;
+
+}
+
+
+
+#img2{
+    margin-left: 84px;
+}
+
+h2{
+    margin-left: 10px;
+}
+
+.line2{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.box{
+    width: 350px;
+    height: 250px;
+    border: 0px solid black;
+    background-color: white; 
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.box img{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+.line3{
+    margin-top: 40px;
+}
+
+.track{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.track img{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+p{
+    font-size: 14px;
+    text-align: center;
+}

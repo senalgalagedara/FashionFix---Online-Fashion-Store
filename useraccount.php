@@ -129,7 +129,7 @@ if ($result) {
         $email = $row['email'];
 
         echo "
-        <form action='updatedetails.php' method='post'  style='height: 100vh;'>
+        <form action='updatedetails.php' method='post'  style='height: 100vh;' onsubmit='return validateEmail()'>
             <table class='usertable'>
                 <tr>
                     <th colspan='2'></th>
@@ -160,8 +160,20 @@ if ($result) {
                 </tr>
                 <tr>
                     <td class= 'accdetails'>Email</td>
-                    <td><input type='text' name='email' class='accint ' value='$email'></td>
+                    <td><input type='text' name='email' class='accint' id='email' value='$email'></td>
                 </tr>
+                <script>
+            function validateEmail(){
+                const email = document.getElementById('email').value;
+
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return false; // Prevent form submission
+                }
+            }
+             
+        </script>
                 <tr>
                     <td>
                         <button type='submit' class='updatebtn' name='update'>Update</button>

@@ -10,7 +10,7 @@ if(isset($_POST['removeProduct'])){
 
 
     if($result === TRUE){
-        header("location:orderdetails.php");
+        header("location:index.php");
         exit();
     }
     else{

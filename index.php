@@ -73,6 +73,43 @@ function showSlides() {
 }
 </script>
 
+<button onclick="topFunction()" 
+style="
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  background-color: #ee6002;
+  color: white;
+  cursor: pointer;
+  padding: 7px 16px;
+  border-radius: 25px;
+  font-weight: 900;
+    "
+
+id="myBtn" title="Go to top">^</button>
+
+<script>
+let mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+      
+
     </div>
 
     <div class="title">

@@ -24,7 +24,6 @@ function emailExist($conn, $email){
 
 function login($conn, $email, $pass){
     $sql = "SELECT * FROM user_signin WHERE email =?;";
-  //  $sql1 = "SELECT * FROM shipping_details WHERE email =?;";
 
     $stmt = mysqli_stmt_init($conn);
     mysqli_stmt_prepare($stmt, $sql);
@@ -37,10 +36,9 @@ $row = mysqli_fetch_assoc($result);
 
 
     session_start();    
-    
     $_SESSION['email'] = $row['email'];
     $_SESSION['User_Id'] = $row['User_Id'];
-
+    $_SESSION['username'] = $row['username'];
     mysqli_stmt_close($stmt);
     header("Location: useraccount.php");
     exit();

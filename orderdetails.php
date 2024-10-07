@@ -1,30 +1,4 @@
-<?php
-include("config.php");
-session_start(); 
 
-if(!isset($_SESSION)){
-    echo "Session has not been started!";
-    exit();
-}
-
-if(isset($_SESSION['email'])){
-    $sql = "SELECT * FROM user_signin WHERE email =?;";
-    $stmt = mysqli_stmt_init($conn);
-    mysqli_stmt_prepare($stmt, $sql);
-    mysqli_stmt_bind_param($stmt, 's', $email);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-
-    $row = mysqli_fetch_assoc($result);
-
-    $email = $_SESSION['email'];
-    $id = $_SESSION['User_Id'];
-
-    echo "<p style='color:black;font-size:13px;'> You're logged in as $email  $id</p>";
-} else {
-
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,10 +7,10 @@ if(isset($_SESSION['email'])){
     <title>Order Details - FashionFix</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,800;1,800&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel='stylesheet' type='text/css' media='screen' href='src/css/product.css'>
     <link rel="stylesheet" href="src/css/style.css">
     <script src='main.js'></script>
@@ -62,6 +36,38 @@ if(isset($_SESSION['email'])){
                 <div class="signin">
                     <a href="signin.php" class="signfont">Sign Up</a>
                 </div>  
+                <?php
+include("config.php");
+session_start(); 
+
+if(!isset($_SESSION)){
+    echo "<div class='login'>
+                   <span class='material-symbols-outlined' style='font-size: 20px;margin: auto; border: 2px solid white; border-radius: 20px; text-align: center;'>
+                    person
+                    </span> 
+                    <a href='login.php' style='margin: auto; font-family: 'Roboto Condensed', sans-serif !important; font-size: 15px; font-weight: 500; padding-right: 3px; color: white; text-align: center;'>Log In</a>
+                </div>";
+    exit();
+}
+
+else if(isset($_SESSION['email'])){
+    $email = $_SESSION['email'];
+    $id = $_SESSION['User_Id'];
+    echo "<div class='login'>
+                   <span class='material-symbols-outlined' style='font-size: 20px;margin: auto; border: 2px solid white; border-radius: 20px; text-align: center;'>
+                    person
+                    </span> 
+                    <a href='useraccount.php' style='margin: auto; font-family: 'Roboto Condensed', sans-serif !important; font-size: 15px; font-weight: 500; padding-right: 3px; color: white; text-align: center;'>Welcome $email</a>
+                </div>";
+} else {
+    echo "<div class='login'>
+    <span class='material-symbols-outlined' style='font-size: 20px;margin: auto; border: 2px solid white; border-radius: 20px; text-align: center;'>
+     person
+     </span> 
+     <a href='login.php' style='margin: auto; font-family: 'Roboto Condensed', sans-serif !important; font-size: 15px; font-weight: 500; padding-right: 3px; color: white; text-align: center;'>Log In</a>
+ </div>"; 
+}
+?>
                 
             </div>
         </div>

@@ -108,7 +108,8 @@ if(isset($_POST['submitsignin'])){
             </div>
         </nav>
 <div class="bodysite">
-    <form class="signinbox" action="" method="post">
+    <form class="signinbox" style="    height: 570px;
+" action="" method="post" onsubmit="return validateEmail()">
         <h2 class="headd">Create Account</h2>
         <p class="signpara">Please fill in the information below to create an account</p>
         
@@ -116,8 +117,19 @@ if(isset($_POST['submitsignin'])){
         <input class="inputbox" type="text" name="username" id="">
 
         <p class="signparaa">E-mail</p>
-        <input class="inputbox" type="text" name="email" id="">
+        <input class="inputbox" type="email" name="email" id="">
+        <script>
+            function validateEmail(){
+                const email = document.getElementById("email").value;
 
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return false; // Prevent form submission
+  }
+            }
+             
+        </script>
         <p class="signparaa">Password</p>
         <input class="inputbox" type="password" name="passwordd" id="">
 
@@ -130,6 +142,10 @@ if(isset($_POST['submitsignin'])){
         <p class="para" style="text-align: center; margin-top: 20px;">
             Already have an account?
             <a href="login.php" style="color: blue;">Login here</a>
+        </p>
+        <p class="para" style="text-align: center; margin-top: 0px;">
+            Register as driver?
+            <a href="driver_register.php" style="color: blue;">click here</a>
         </p>
     </form>
 </div>

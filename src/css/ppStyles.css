@@ -1,0 +1,23 @@
+*{
+    font-family: 'Poppins';
+}
+
+h1{
+    font-family: 'Roboto', sans-serif;
+}
+
+li{
+    font-size: small;
+    list-style-type: disc;
+}
+
+.ppp{
+    margin-top: 200px;
+    padding: 0px 100px;
+    margin-bottom: 100px;
+    text-align: justify;
+}
+
+h1{
+    text-align: center;
+}
