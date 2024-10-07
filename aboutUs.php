@@ -74,7 +74,7 @@
         <hr><br>
         <h1>Our Brands</h1>
         <div class="line3">
-                <!--<button class="prev-btn" onclick="prevSlide()">&#10094;</button>-->
+                
                 <div class="track">
                     <div class="brand-logo"><img src="src/img/fashion.png" alt="Hustle"></div>
                     <div class="brand-logo"><img src="src/img/fashion1.png" alt="King Street"></div>
@@ -83,7 +83,7 @@
                     <div class="brand-logo"><img src="src/img/fashion4.png" alt="Crocodile"></div>
                     <div class="brand-logo"><img src="src/img/fashion5.png" alt="Amy"></div>
                 </div>
-                <!--<button class="next-btn" onclick="nextSlide()">&#10095;</button>-->
+                
         </div>
         
     </div>

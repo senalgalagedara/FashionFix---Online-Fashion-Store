@@ -1,4 +1,4 @@
-/* General Page Styles */
+
 body {
     background: #fff2df;
     box-sizing: border-box;
@@ -8,7 +8,6 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-/* Header Styling */
 .header {
     background-color: #ffaf49;
     color: white;
@@ -16,14 +15,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed; /* Keep the header fixed at the top */
+    position: fixed; 
     width: 100%;
     top: 0;
-    z-index: 1000; /* Ensure it stays above other content */
+    z-index: 1000; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Sidebar Toggle Button in the Header */
 .sidebar-toggle {
     background-color: transparent;
     border: none;
@@ -37,17 +35,15 @@ body {
     font-size: 32px;
 }
 
-/* Container to hold sidebar and main content */
 .main-container {
     display: flex;
 }
 
-/* Sidebar Styling */
 .sidebar {
     width: 250px;
     background-color: #333;
     position: fixed;
-    top: 96px; /* Adjusted to align with the header */
+    top: 96px; 
     bottom: 0;
     left: 0;
     padding: 20px;
@@ -114,22 +110,20 @@ body {
     color: #ffaf49;
 }
 
-/* Main Content Styling */
 .customer-complaints {
-    margin-left: 270px; /* When sidebar is expanded */
-    width: calc(100% - 270px); /* When sidebar is expanded */
-    padding: 20px; /* General padding for table */
-    margin-top: 46px; /* Ensure this matches the header height */
+    margin-left: 270px; 
+    width: calc(100% - 270px); 
+    padding: 20px; 
+    margin-top: 46px; 
     overflow-y: auto;
-    transition: margin-left 0.3s ease, width 0.3s ease; /* Smooth transition */
+    transition: margin-left 0.3s ease, width 0.3s ease; 
 }
 
 .customer-complaints.centered {
-    margin-left: 100px; /* Center when sidebar is collapsed */
-    width: 100%; /* Full width when sidebar is collapsed */
+    margin-left: 100px; 
+    width: 100%; 
 }
 
-/* Table Styles */
 .cc-table {
     width: 100%;
     margin: 20px auto;
@@ -166,7 +160,6 @@ body {
     background-color: #f1f1f1;
 }
 
-/* Action Buttons Styling */
 .action-buttons {
     display: flex;
     gap: 10px;
@@ -186,7 +179,6 @@ body {
     background-color: #e99e30;
 }
 
-/* Header Styles */
 .header {
     display: flex;
     padding: 0px;
@@ -249,7 +241,6 @@ body {
     cursor: pointer;
 }
 
-/* Footer Section */
 .footerboxes {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -279,7 +270,6 @@ a {
     margin-bottom: 10px;
 }
 
-/* Footer Styles */
 footer {
     text-align: center;
     padding: 20px;
@@ -301,7 +291,6 @@ footer {
     }
 }
 
-/* Width Management */
 .width60 {
     font-size: 12px;
     text-align: left;
@@ -318,7 +307,6 @@ footer {
     color: white;
 }
 
-/* Paragraph Styling */
 .para {
     font-size: 12px;
     color: black;

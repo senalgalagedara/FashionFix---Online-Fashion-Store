@@ -124,13 +124,12 @@
         function toggleContent(id, button) {
             var content = document.getElementById(id);
         
-        // Toggle the visibility of the content
             if (content.style.maxHeight) {
-                content.style.maxHeight = null; // Collapse the content
-                button.classList.remove('open'); // Rotate button back
+                content.style.maxHeight = null; 
+                button.classList.remove('open'); 
             } else {
-                content.style.maxHeight = content.scrollHeight + "px"; // Expand content
-                button.classList.add('open'); // Rotate button
+                content.style.maxHeight = content.scrollHeight + "px"; 
+                button.classList.add('open'); 
             }
         }
 

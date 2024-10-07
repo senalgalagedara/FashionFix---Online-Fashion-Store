@@ -6,7 +6,7 @@ if (isset($_GET['id']) && isset($_GET['field'])) {
     $field = $_GET['field'];
 
     
-    $valid_fields = ['fname', 'lname', 'Password', 'Age', 'adress', 'contNo', 'Email', 'acc_no', 'acc_name', 'bname'];
+    $valid_fields = ['fname', 'lname', 'Npassword', 'Age', 'adress', 'contNo', 'Email', 'acc_no', 'acc_name', 'bname'];
     if (!in_array($field, $valid_fields)) {
         echo "<script>
             alert('Invalid field specified.');

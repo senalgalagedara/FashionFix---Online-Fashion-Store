@@ -1,17 +1,14 @@
 <?php 
     require 'adminConfig.php';
 
-    // Get the Response_ID from the URL
     $responseId = $_GET['id'];
 
-    // Fetch data from the database using Response_ID
     $query = "SELECT * FROM responses WHERE Response_ID = '$responseId'";
     $result = $con->query($query);
 
-    // Check if the response exists
     if($result->num_rows > 0){
         $row = $result->fetch_assoc();
-        $ticketId = $row['Ticket_ID'];  // Fetch the Ticket ID as well
+        $ticketId = $row['Ticket_ID'];  
         $fname = $row['Name'];
         $pnum = $row['Phone'];
         $mail = $row['Email'];
@@ -51,9 +48,8 @@
         </div>
     </div>
     <div class="fff">
-        <!-- Display fetched details in the form for editing -->
         <form method="post" action="responsesUpdate.php" onsubmit="return validation()">
-            <input type="hidden" name="responseId" value="<?php echo $responseId; ?>" /> <!-- Hidden field for Response_ID -->
+            <input type="hidden" name="responseId" value="<?php echo $responseId; ?>" /> 
             
             Ticket ID: <br />
             <input type="text" name="ticketid" value="<?php echo $ticketId; ?>" id="tid" readonly><br><br>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -360,19 +359,8 @@ function topFunction() {
     </div>
     <div class="space">
     </div>
- <!--   <div class="title">
-        <h1>Brands</h1>
-    </div>-->
 
-    <div class="headerekeclassnameek">
-        <div class="slide2">,asm dasdnaskdna;ls</div>
-        <div class="slide2"></div>
-        <div class="slide2"></div>
-        <div class="slide2"></div>
-        <div class="slide2"></div>
-    </div>
 
-    <hr>
 
 
 <?php

@@ -1,6 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: wheat;
+    font-family: popins;
+    background-color: white;
+    background-image: url('../img/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     display: flex;
@@ -22,14 +26,15 @@ h1 {
 }
 
 form {
-    background-color: #fff;
-    width: 600px; /* Increased width */
-    max-height: 80vh; /* Set max height for scrollability */
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 600px; 
+    max-height: 80vh; 
     padding: 30px;
+    border:#333 1px solid;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; /* Enable vertical scrolling */
-    margin-top: 80px; /* Add margin to avoid overlap with fixed h1 */
+    overflow-y: auto; 
+    margin-top: 80px; 
 }
 
 h3 {

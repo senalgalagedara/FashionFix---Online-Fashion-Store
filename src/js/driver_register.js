@@ -1,28 +1,30 @@
-var SubButton = document.getElementById("Sbutton");
-SubButton.addEventListener("click", check); 
-const currentDate = new Date();
+/* document.getElementById("driverForm").addEventListener("submit", check);
 
 function check(event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
-    const password = document.getElementById("Password").value;
-    const confirmPassword = document.getElementById("CPassword").value;
-    const Age = document.getElementById("age").value;
-
+    var password = document.getElementById("Password").value.trim();
+    var confirmPassword = document.getElementById("CPassword").value.trim();
+    var age = parseInt(document.getElementById("age").value.trim());
+    var licenceNo = document.getElementById("licenceNo").value.trim();
+    var accountNo = document.getElementById("acc_no").value.trim();
+    
     if (password !== confirmPassword) {
-        alert ("Password mismatched");
-        return;
-    }
-    if (Age <= 18) {
-        alert ("Sorry, you must be at least [required_age] years old to proceed. Please verify your age and try again");
-        return;
+        alert("Passwords do not match. Please try again.");
+        return false;
     }
 
-    else{
-        alert("Your information was submitted successfully");
-        window.location.href = "driver_account.php";
+    if (isNaN(age) || age < 18) { 
+        alert("Sorry, you must be at least 18 years old to proceed. Please verify your age and try again.");
+        return false;
     }
+
+    if (!licenceNo || !accountNo) {
+        alert("Please ensure all required fields are filled.");
+        return false;
+    }
+
+    alert("Your information was submitted successfully");
+    document.getElementById("driverForm").submit();  
 }
-
-
-
+ */

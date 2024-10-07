@@ -27,7 +27,9 @@
                 <span class="material-symbols-outlined">
                 search
                 </span>
-                <input type="text" name="searchbox" id="" class="Stext" placeholder="Search Products...">
+                <input type="text" name="searchbox" id="input-box" class="Stext" placeholder="Search Products...">
+                <div class="result-box"></div>
+                <script src="js/siteindex.js"></script>
              </div>
             <div class="headerboxs" style="width: 40%;">
                 <span class="material-symbols-outlined shape" >
@@ -78,13 +80,13 @@ else if(isset($_SESSION['email'])){
     
         <nav>
             <ol class="nav">
-                <a href="index.php" class="nostyle"><li class="nostyle">HOME</li></a>
-                <a href="" class="nostyle" style="display: block;"><li class="nostyle">MEN</li></a>
-                <a href="" class="nostyle"><li class="nostyle">WOMEN</li></a>
+                <a href="index.php" class="nostyle"><li class="nostyle">MEN</li></a>
+                <a href="" class="nostyle" style="display: block;"><li class="nostyle">WOMEN</li></a>
                 <a href="" class="nostyle"><li class="nostyle">KIDS</li></a>
-                <a href="" class="nostyle"><li class="nostyle">HOME & LIVING</li></a>
-                <a href="" class="nostyle"><li class="nostyle">CONTACT US</li></a>
-                <a href="" class="nostyle"><li class="nostyle">NEED HELP?</li></a>
+                <a href="faq.php" class="nostyle"><li class="nostyle">FAQ</li></a>
+                <a href="aboutUs.php" class="nostyle"><li class="nostyle">AboutUs</li></a>
+                <a href="contactUs.php" class="nostyle"><li class="nostyle">CONTACT US</li></a>
+                <a href="needhelp.php" class="nostyle"><li class="nostyle">NEED HELP?</li></a>
             </ol>
             <!--<div class="navbox" style="display: none;">
                 <div class="nostyle">

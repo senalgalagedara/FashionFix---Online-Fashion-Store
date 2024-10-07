@@ -9,7 +9,6 @@ include('config.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FashionFix-Driver_register Form</title>
     <link rel="stylesheet" href="src/css/driver_form.css">
-    <link rel="stylesheet" href="src/css/style.css">
     <script src="src/js/driver_register.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
@@ -17,7 +16,7 @@ include('config.php');
 <body>
 
     <h1>Welcome to FashionFix</h1>
-    <form action="submitDdetailes.php" method="post">
+    <form action="submitDdetailes.php" method="post" id="driverForm">
     <h3>Personal information</h3>
         <fieldset class="p.info">
             
@@ -32,18 +31,18 @@ include('config.php');
         </div>
 
         <div class="p.info" id="Password">
-            <label for="Password">Password</label>
-            <input type="password" name="Password" id="Password" >
-        </div>  
-        
-        <div class="p.info" id="cPassword">
-            <label for="CPassword">Confirm Password</label>
-            <input type="password" name="CPassword" id="CPassword" >
-        </div>  
+        <label for="Password">Password</label>
+        <input type="password" name="Npassword" id="p1" required>
+    </div>  
+
+    <div class="p.info" id="cPassword">
+        <label for="CPassword">Confirm Password</label>
+        <input type="password" name="CPassword" id="p2" required>
+    </div> 
         
         <div class="p.info" id="age">
             <label for="age">Age</label>
-            <input type="text" name="Age" id="age" >
+            <input type="number" name="Age" id="age" required >
         </div>
         
         <div class="p.info" id="Adress">
@@ -93,9 +92,41 @@ include('config.php');
         </fieldset>   
 
         <div class="submit-button">
-            <a href="submitdriverdetail.php"><input type="submit" value="Submit" id="Sbutton"></a>
+        <input type="submit" value="Submit" id="sbutton"></a>
         </div>
     </form>
+
+<script>
+document.getElementById("driverForm").addEventListener("submit", check);
+
+function check(event) {
+    event.preventDefault();
+
+    var password = document.getElementById("p1").value;
+    var confirmPassword = document.getElementById("p2").value;
+    var age = parseInt(document.getElementById("age").value);
+    var licenceNo = document.getElementById("licenceNo").value;
+    var accountNo = document.getElementById("acc_no").value;
+    
+    if (password !== confirmPassword) {
+        alert("Passwords do not match. Please try again.");
+        return false;
+    }
+
+  
+
+    if (!licenceNo || !accountNo) {
+        alert("Please ensure all required fields are filled.");
+        return false;
+    }
+
+    alert("Your information was submitted successfully");
+    document.getElementById("driverForm").submit();  
+}
+
+
+</script>
+
 
 </body>
 </html>

@@ -30,7 +30,7 @@
                 <img src="src/img/admin.png" alt="admin">
            </div>
         </div>
-        <div class = "fff"> <!--fieldset ekai legend ekai denna -->
+        <div class = "fff"> 
                 <form method = "post" action="responsesDelete.php">
                             Ticket ID: <br />
                             <input type="text" name="ticketid" placeholder="ticket ID" id=tid required><br> <br>

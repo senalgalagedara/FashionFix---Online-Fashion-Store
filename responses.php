@@ -23,22 +23,18 @@
 </head>
 <body>
 <?php 
- // Include database configuration
+ 
  include("src/adminHeader1.html");
 
- // Handle delete request (delete one row by Response_ID)
     if (isset($_GET['delete_response_id'])) {
         $response_id = $_GET['delete_response_id'];
 
-        // Ensure $response_id is valid (integer check)
         if (!empty($response_id) && is_numeric($response_id)) {
 
-            // Prepare the delete query
             $sql = "DELETE FROM responses WHERE Response_ID = ?";
             if ($stmt = $con->prepare($sql)) {
-                $stmt->bind_param("i", $response_id); // "i" for integer binding
+                $stmt->bind_param("i", $response_id); 
 
-                // Execute the delete query
                 if ($stmt->execute()) {
                     echo "<p style='text-align: center; color: green;'>Complaint with Response ID $response_id deleted successfully.</p>";
                 } else {
@@ -62,7 +58,7 @@
 
         <h1 style="margin-top: 100px; text-align: center;">Responses Details</h1>
 
-        <div class = "fff"> <!--fieldset ekai legend ekai denna -->
+        <div class = "fff"> 
                 <form method = "post" action="responsesInsert.php" onsubmit="return validation()">
                             Ticket ID: <br />
                             <input type="text" name="ticketid" placeholder="ticket ID" id=tid required><br> <br>
@@ -87,7 +83,6 @@
 
     <div class="main-container">
 
-        <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
             <div class="admin-profile">
                 <img src="src/img/admin.png" alt="Admin Profile" class="profile-pic">
@@ -111,11 +106,10 @@
         <div class="customer-complaints" style="margin-right: 200px">
 
             <?php
-                // Query to fetch data from the "responses" table
+              
                 $sql = "SELECT Response_ID, Ticket_ID, Name, Phone, Email, Response FROM responses";
                 $result = $con->query($sql);
 
-                // If there are rows, display the table
                 if ($result->num_rows > 0) {
                     echo "<table class='cc-table'>";
                     echo "<caption>Responses Summary</caption>";
@@ -132,7 +126,6 @@
                         </thead>";
                     echo "<tbody>";
 
-                    // Fetch and display each row from the database
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td>".$row["Response_ID"]."</td>";
@@ -159,7 +152,6 @@
             ?>
         </div>
 
-             <!-- Main Content -->
     </div>
 
 <?php
@@ -171,7 +163,7 @@
 <script>
         function deleteComplaint(id) {
                 if (confirm("Are you sure you want to delete this complaint?")) {
-                    // Redirect to the same page with the response_id as a GET parameter to trigger the delete action
+                  
                     window.location.href = "admin.php?delete_response_id=" + id;
                     window.location.href = "admin.php?delete_complaint_id=" + id;
                 }

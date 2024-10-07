@@ -63,7 +63,7 @@ include('config.php');
                  </tr>
                  <tr>
                      <th>Password</th>
-                     <td><?php echo $row['Password']; ?></td>
+                     <td><?php echo $row['Npassword']; ?></td>
                      <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=Password">delete</a></td>
                  </tr>
                  <tr>

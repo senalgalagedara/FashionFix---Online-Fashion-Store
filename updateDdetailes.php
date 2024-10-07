@@ -22,7 +22,7 @@ if (isset($_GET['id'])) {
 if (isset($_POST['update'])) {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
-    $password = $_POST['Password'];  
+    $Npassword = $_POST['Npassword'];  
     $age = $_POST['Age'];
     $address = $_POST['adress'];
     $contNO = $_POST['contNo'];
@@ -35,7 +35,7 @@ if (isset($_POST['update'])) {
     $sql = "UPDATE driver SET
                 fname = '$fname',
                 lname = '$lname',
-                Password = '$password',
+                Npassword = '$Npassword',
                 Age = '$age',
                 adress = '$address',
                 contNo = '$contNO',
@@ -79,7 +79,7 @@ mysqli_close($conn);
     <input type="text" name="lname" id="lname" value="<?php echo $row['lname']; ?>">
 
     <label for="Password">Password:</label>
-    <input type="password" name="Password" id="Password" value="<?php echo $row['Password']; ?>" >
+    <input type="password" name="Npassword" id="Password" value="<?php echo $row['Npassword']; ?>" >
 
     <label for="Age">Age:</label>
     <input type="text" name="Age" id="Age" value="<?php echo $row['Age']; ?>" >

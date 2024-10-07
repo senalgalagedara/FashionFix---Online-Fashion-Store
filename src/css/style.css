@@ -63,7 +63,7 @@ body
 }
 .signin
 {
-    width: 16%;
+    width: 20%;
     height: 21px;
     text-align: center;
     padding: 10px !important;
@@ -626,3 +626,30 @@ input[type="radio"]:checked ::after {
     margin-left: 200px;
     margin-top: 20px;
 }
+.result-box {
+    width: 40%;
+    position: absolute;
+    right: 0;
+    margin: 10px auto;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 50px;
+    z-index: 4;
+    display: none; /* Initially hidden */
+  }
+  
+  .listboxul {
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .listboxli {
+    padding: 5px 0px;
+    list-style: none;
+    cursor: pointer;
+  }
+  .listboxli:hover {
+    background-color: #f0f0f0; /* Optional hover effect */
+  }
+  
