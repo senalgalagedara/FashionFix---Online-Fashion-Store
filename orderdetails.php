@@ -172,11 +172,11 @@ if ($result) {
  
     <tr style='padding-top: 30px ; width:100%; text-align:center;' >
         <td style='width:20%; padding-top: 10px; padding-bottom: 10px;'>
-        <input type='text' name='product_id' value='$id' style='text-align:center; background-color:#FFF9C4; border:none;' readonly></td>
-        <td style='width:20%; padding-top: 10px; padding-bottom: 10px;'>$price</td>
+        <input type='text' name='product_id' id='id' value='$id' style='text-align:center; background-color:#FFF9C4; border:none;' readonly></td>
+        <td id='price' style='width:20%; padding-top:  10px; padding-bottom: 10px;'>$price</td>
         <td style='width:20%; padding-top: 10px; padding-bottom: 10px;'>$size</td>
-        <td style='width:20%; padding-top: 10px; padding-bottom: 10px;'>$quentity</td>
-        <td style='width:20%; padding-top: 10px; padding-bottom: 10px;'>$total</td>
+        <td id='quentity' style='width:20%; padding-top: 10px; padding-bottom: 10px;'>$quentity</td>
+        <td id = 'total'style='width:20%; padding-top: 10px; padding-bottom: 10px;'>$total</td>
 
         <td><button type='submit'  name='removeProduct' style='   background-color: #FF7043;
     padding:20px;
@@ -197,8 +197,11 @@ if ($result) {
 } else {
     echo "Error fetching details.";
 }
+$alltotal=0;
 $sql12 = "
-    SELECT price FROM order_details;
+    SELECT price FROM order_details where product_id = (
+                        select product_id FROM order_details where price = '2300'
+        );
 ";
 
 $result2 = mysqli_query($conn, $sql12);
@@ -206,17 +209,30 @@ $result2 = mysqli_query($conn, $sql12);
 if ($result)
 {while ($row = mysqli_fetch_assoc($result2))
 {
-    $alltotal=$total;
-    
+    $total=$price*$quentity;
+    $alltotal=$alltotal + $total;
 }
-$alltotal=$alltotal+$total;
+
 }
 ?>
 </table>
 </div>
 <div style="width: 100%; text-align:center; display:block;">
-<h3 style="font-family: 'Fredoka', sans-serif; background-color:#ffddb0; display:block; margin: 20px auto; width:40%; padding: 20px;">Sub total : <?php echo "<span style='color:#FF7043'>Rs. $alltotal</span>"; ?> </h3>
+<h3 style="font-family: 'Fredoka', sans-serif; background-color:#ffddb0; display:block; margin: 20px auto; width:40%; padding: 20px;">Sub total :<p id="test"></p> <?php echo "<span style='color:#FF7043'>Rs. $alltotal</span>"; ?> </h3>
 </div>
+<script>
+var id=document.getElementById("id").value;
+var price = document.getElementById("price").value;
+var quentity = document.getElementById("quentity").value;
+var total = document.getElementById("total").value;
+
+var sum =0;
+for(var i = 0;i<=id;i++)
+{
+    sum = total+price;
+}
+console.log(sum);
+</script>
 
 <button type="submit" class="checkoutbtn"><a href="checkout.php">PROCEED TO CHECKOUT</a></button>
 <br>

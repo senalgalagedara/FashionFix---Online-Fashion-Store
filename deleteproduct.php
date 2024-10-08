@@ -14,7 +14,10 @@ if(isset($_POST['removeProduct'])){
         exit();
     }
     else{
-echo("mwka wada nhh 2 pw");    
+echo "<script>
+alert('Product didnt added succesfully');
+      </script>
+    ";;    
 }
 };
 ?>

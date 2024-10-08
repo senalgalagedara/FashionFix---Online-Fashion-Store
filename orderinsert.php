@@ -1,5 +1,5 @@
 <?php
-include ('src/config.php');
+include ('config.php');
 ?>
 
 <?php
@@ -34,9 +34,9 @@ if (isset($_POST['reresh'])){
                     echo "Error inserting record: ". $conn->error . "<br>";
                 }
             }
-            /* else{
+            else{
                 echo "Record for user ID $User_Id already exists...!<br>";
-            } */
+            }
             
         }
        

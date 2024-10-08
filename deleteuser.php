@@ -25,7 +25,10 @@ if(isset($_POST['delete'])){
         exit();
     }
     else{
-echo("mwka wada nhh 2 pw");    
+        echo "<script>
+        alert('User id not deleted');
+              </script>
+            ";    
 }
 };
 ?>

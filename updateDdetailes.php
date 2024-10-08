@@ -82,7 +82,7 @@ mysqli_close($conn);
     <input type="password" name="Npassword" id="Password" value="<?php echo $row['Npassword']; ?>" >
 
     <label for="Age">Age:</label>
-    <input type="text" name="Age" id="Age" value="<?php echo $row['Age']; ?>" >
+    <input type="number" name="Age" id="Age" value="<?php echo $row['Age']; ?>" >
 
     <label for="adress">Address:</label>
     <textarea name="adress" id="adress" cols="20" rows="5" ><?php echo $row['adress']; ?></textarea>
@@ -104,8 +104,22 @@ mysqli_close($conn);
     <label for="bname">Bank Name:</label>
     <input type="text" name="bname" id="bname" value="<?php echo $row['bname']; ?>" >
 
-    <input type="submit" value="Update" name="update">
+    <input type="submit" value="Update" name="update" id="sub">
 </form>
 
+<!-- <script>
+    var sub = document.getElementById("sub");
+    var Changeage = document.getElementById("Age").value;
+    
+    sub.addEventListener("click", checkage);
+
+    function checkage(event)
+    {
+        if (Changeage < 18){
+            alert("Please Input value over 18");
+            event.preventDefault();
+        }
+    }
+</script> -->
 </body>
 </html>

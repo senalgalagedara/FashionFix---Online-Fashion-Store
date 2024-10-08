@@ -31,9 +31,15 @@ if(isset($_POST['update']) )
         header("location:checkout.php");
     }
     else{
-        echo ("meka wada nh");
+        echo "<script>
+    alert('details not complete');
+          </script>
+        ";
     }
 
-}else{ echo ("meka wada nh2");}
+}else{ echo "<script>
+    alert('details not complete');
+          </script>
+        ";}
 
 ?>

@@ -10,7 +10,6 @@
     <title>FashionFix</title>
     <link rel="stylesheet" href="src/css/admin111.css">
     <link rel="stylesheet" href="src/css/cm.css">
-    <script src="src/js/script.js"></script>
     <script src="src/js/adminComplaintsManaging.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,6 +48,30 @@
     }
 
 ?>
+
+
+<div class="sidebar" id="sidebar" style="margin-top: -6px;">
+    <div class="admin-profile">
+        <img src="src/img/admin.png" alt="Admin Profile" class="profile-pic">
+        <h2>Barry Allen</h2>
+        <p>Administrator</p>
+    </div>
+
+        <ul class="menu">
+            <li><a href="admin.php">Dashboards</a></li>
+            <ul class="submenu">
+                <li><a href="orderDetailssss.php">Orders</a></li>
+                <li><a href="#">Accounts</a></li>
+                <li><a href="driverDetails.php">Drivers</a></li>
+                <li><a href="userDetails.php">Customers</a></li>
+                <li><a href="customerComplaints.php">Complaints</a></li>
+                <li><a href="responses.php">Responses</a></li>
+            </ul>
+        </ul>
+</div>
+
+
+
   <div class="hhh">
         <div class="pannel">
             <div class="adminimg">
@@ -161,6 +184,28 @@
 ?>
 
 <script>
+            
+            window.onload = function() {
+                const sidebar = document.getElementById('sidebar');
+                const isActive = localStorage.getItem('sidebarActive') === 'true';
+
+                if (isActive) {
+                    sidebar.classList.add('active');
+                }
+
+                adjustTablePosition(isActive);
+            }
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                sidebar.classList.toggle('active');
+
+                localStorage.setItem('sidebarActive', sidebar.classList.contains('active'));
+
+                adjustTablePosition(sidebar.classList.contains('active'));
+            }
+
+
         function deleteComplaint(id) {
                 if (confirm("Are you sure you want to delete this complaint?")) {
                   

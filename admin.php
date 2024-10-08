@@ -42,32 +42,7 @@
                 echo "<p style='text-align: center; color: red;'>Invalid Response ID.</p>";
             }
         }
-
-        if (isset($_GET['delete_complaint_id'])) {
-            $complaint_id = $_GET['delete_complaint_id'];
-
-            
-            if (!empty($complaint_id) && is_numeric($complaint_id)) {
-
-               
-                $sql = "DELETE FROM complaints WHERE Ticket_ID = ?";
-                if ($stmt = $con->prepare($sql)) {
-                    $stmt->bind_param("i", $complaint_id); 
-
-                    if ($stmt->execute()) {
-                        echo "<p style='text-align: center; color: green;'>Complaint with Response ID $complaint_id deleted successfully.</p>";
-                    } else {
-                        echo "<p style='text-align: center; color: red;'>Error deleting complaint: " . $con->error . "</p>";
-                    }
-
-                    $stmt->close();
-                }
-            } else {
-                echo "<p style='text-align: center; color: red;'>Invalid Response ID.</p>";
-            }
-        }
-
-        
+ 
     ?>
 
     
@@ -82,10 +57,10 @@
     </div>
 
     <ul class="menu">
-        <li><a href="#">Dashboards</a></li>
+        <li><a href="admin.php">Dashboards</a></li>
         <ul class="submenu">
             <li><a href="orderDetailssss.php">Orders</a></li>
-            <li><a href="#">Accounts</a></li>
+            <li><a href="admin.php">Accounts</a></li>
             <li><a href="driverDetails.php">Drivers</a></li>
             <li><a href="userDetails.php">Customers</a></li>
             <li><a href="customerComplaints.php">Complaints</a></li>
@@ -93,30 +68,6 @@
         </ul>
     </ul>
 </div>
-
-
-<div class="main-container">
-
-        
-        <div class="sidebar" id="sidebar">
-            <div class="admin-profile">
-                <img src="src/img/admin.png" alt="Admin Profile" class="profile-pic">
-                <h2>Barry Allen</h2>
-                <p>Administrator</p>
-            </div>
-
-            <ul class="menu">
-                <li><a href="#">Dashboards</a></li>
-                <ul class="submenu">
-                    <li><a href="#">Orders</a></li>
-                    <li><a href="#">Accounts</a></li>
-                    <li><a href="#">Drivers</a></li>
-                    <li><a href="#">Customers</a></li>
-                    <li><a href="#">Complaints</a></li>
-                    <li><a href="responses.php">Responses</a></li>
-                </ul>
-            </ul>
-        </div>
 
         <div class="customer-complaints">
 
@@ -136,7 +87,7 @@
                                     <th>Size</th>
                                     <th>Quantity</th>
                                     <th>Price</th>
-                                    <th>Actions</th>
+                                    
                                 </tr>
                             </thead>";
                         echo "<tbody>";
@@ -150,10 +101,7 @@
                             echo "<td>".$row["quentity"]."</td>";
                             echo "<td>".$row["price"]."</td>";
                             echo "<td>
-                                    <div class='action-buttons'>
-                                        
-                                        <button class='btn-action' onclick='deleteComplaint(".$row["product_id"].")'>Delete</button>
-                                    </div>
+                                    
                                 </td>";
                             echo "</tr>";
                         }
@@ -192,7 +140,7 @@
                             <th>Address</th>
                             <th>Phone_Number</th>
                             <th>Email</th>
-                            <th>Actions</th>
+                            
                         </tr>
                     </thead>";
                 echo "<tbody>";
@@ -207,12 +155,12 @@
                     echo "<td>".$row["address"]."</td>";
                     echo "<td>".$row["phone_number"]."</td>";
                     echo "<td>".$row["email"]."</td>";
-                    echo "<td>
+                    /*echo "<td>
                             <div class='action-buttons'>
                                 
                                 <button class='btn-action' onclick='deleteComplaint(".$row["User_Id"].")'>Delete</button>
                             </div>
-                        </td>";
+                        </td>";*/
                     echo "</tr>";
                 }
 
@@ -230,27 +178,6 @@
 
 
     <div class="main-container">
-
-       
-        <div class="sidebar" id="sidebar">
-            <div class="admin-profile">
-                <img src="src/img/admin.png" alt="Admin Profile" class="profile-pic">
-                <h2>Barry Allen</h2>
-                <p>Administrator</p>
-            </div>
-
-            <ul class="menu">
-                <li><a href="#">Dashboards</a></li>
-                <ul class="submenu">
-                    <li><a href="#">Orders</a></li>
-                    <li><a href="#">Accounts</a></li>
-                    <li><a href="driverDetails.php">Drivers</a></li>
-                    <li><a href="#">Customers</a></li>
-                    <li><a href="customerComplaints.php">Complaints</a></li>
-                    <li><a href="responses.php">Responses</a></li>
-                </ul>
-            </ul>
-        </div>
 
         <div class="customer-complaints">
 
@@ -336,7 +263,7 @@
                             echo "<td>".$row["driver_ID"]."</td>";
                             echo "<td>".$row["fname"]."</td>";
                             echo "<td>".$row["lname"]."</td>";
-                            echo "<td>".$row["Password"]."</td>";
+                            echo "<td>".$row["Npassword"]."</td>";
                             echo "<td>".$row["Age"]."</td>";
                             echo "<td>".$row["adress"]."</td>";
                             echo "<td>".$row["contNo"]."</td>";
@@ -451,7 +378,6 @@
             if (confirm("Are you sure you want to delete this complaint?")) {
                 
                 window.location.href = "admin.php?delete_response_id=" + id;
-                window.location.href = "admin.php?delete_complaint_id=" + id;
             }
         }
 

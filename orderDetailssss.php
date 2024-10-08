@@ -92,12 +92,12 @@
                             echo "<td>".$row["size"]."</td>";
                             echo "<td>".$row["quentity"]."</td>";
                             echo "<td>".$row["price"]."</td>";
-                            echo "<td>
+                           /* echo "<td>
                                     <div class='action-buttons'>
                                         
                                         <button class='btn-action' onclick='deleteComplaint(".$row["Ticket_ID"].")'>Delete</button>
                                     </div>
-                                </td>";
+                                </td>"; */
                             echo "</tr>";
                         }
 

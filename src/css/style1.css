@@ -1,0 +1,41 @@
+input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(252, 155, 171);
+    left: 100px;
+    top: -30px;
+}
+input[type="checkbox"]:checked {
+    width: 30px;
+    height: 30px;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(255, 97, 124);
+    left: 100px;
+    top: -30px;
+
+}
+input[type="checkbox"]:checked ::after {
+    width: 30px;
+    height: 30px;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(252, 155, 171);
+    left: 100px;
+    top: -30px;
+
+}

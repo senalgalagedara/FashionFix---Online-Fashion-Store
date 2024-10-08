@@ -53,7 +53,7 @@
             </div>
 
             <ul class="menu">
-                <li><a href="#">Dashboards</a></li>
+                <li><a href="admin.php">Dashboards</a></li>
                 <ul class="submenu">
                     <li><a href="orderDetails.php">Orders</a></li>
                     <li><a href="#">Accounts</a></li>

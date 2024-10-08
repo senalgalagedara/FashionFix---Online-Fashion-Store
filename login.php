@@ -116,7 +116,7 @@
         </p>
         <p class="para" style="text-align: center; margin-top: 0px;">
             Driver Login
-            <a href="driver_register.php" style="color: blue;">click here</a>
+            <a href="driver_login.php" style="color: blue;">click here</a>
         </p>
     </form>
 </div>

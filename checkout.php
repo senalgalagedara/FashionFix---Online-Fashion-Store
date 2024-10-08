@@ -254,11 +254,11 @@ if ($result) {
         $total = $price*$quentity;
         echo "
 <table style='width:50%; padding-left: 50px; text-align:center; margin:auto; font-family: 'Poppins', sans-serif !important; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>
-    <tr style='font-family: 'Poppins', sans-serif !important;' >
+    <tr style='font-family: 'Poppins', sans-serif !important; width:100%;' >
         <th style='text-align:center; padding-left: 10px; font-family: 'Poppins', sans-serif !important;'>$id</td>
-        <th style='text-align:center; padding-left: 10px; font-family: 'Poppins', sans-serif !important;'>$price</td>
+        <th style='text-align:center; padding-left: 40px; font-family: 'Poppins', sans-serif !important;'>$price</td>
         <th style='text-align:center; padding-left: 30px; font-family: 'Poppins', sans-serif !important;'>$quentity</td>
-        <th style='text-align:center; margin-left: 30px; font-family: 'Poppins', sans-serif !important;'>$total</td>
+        <th style='text-align:center; margin-left: 30px; font-family: 'Poppins', sans-serif !important;'>Rs.$total</td>
     </tr>
             </table>
         </form>";

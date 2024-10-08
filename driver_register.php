@@ -22,12 +22,12 @@ include('config.php');
             
             <div class="p.info" id="Fname">
                 <label for="fname">First Name</label>
-                <input type="text" name="fname" id="fname" placeholder="First name" >
+                <input type="text" name="fname" id="fname" placeholder="First name" required>
             </div>
 
         <div class="p.info" id="Lname">
             <label for="lname">Last Name</label>
-            <input type="text" name="lname" id="lname" placeholder="Last name" >
+            <input type="text" name="lname" id="lname" placeholder="Last name" required>
         </div>
 
         <div class="p.info" id="Password">
@@ -47,17 +47,17 @@ include('config.php');
         
         <div class="p.info" id="Adress">
             <label for="adress">Adress</label>
-            <textarea name="adress" id="adress" cols="20" rows="5"></textarea>
+            <textarea required name="adress" id="adress" cols="20" rows="5"></textarea>
         </div>
 
         <div class="p.info" id="num"></div>
             <label for="No">Contract number</label>
-            <input type="tel" name="contNo" id="contNo" >
+            <input type="tel" name="contNo" id="contNo" pattern="07[0-9]{8}" placeholder="07XXXXXXXX"required>
         </div>
 
         <div class="p.info" id="email"></div>
             <label for="Email">Email</label>
-            <input type="email" name="Email" id="Email" >
+            <input type="email" name="Email" id="Email" required>
         </div>
 
         <h3>Driving Information</h3>
@@ -67,7 +67,7 @@ include('config.php');
 
             <div class="D.info" id="Lno">
                 <label for="lno">Valid Driving Licence Number</label>
-                <input type="text" name="licenceNo" id="licenceNo" >
+                <input type="text" name="licenceNo" id="licenceNo" required>
             </div>
 
         </fieldset>
@@ -77,17 +77,17 @@ include('config.php');
             
             <div class="B.info" id="Account_No">
                 <label for="acc_no">Account Number</label>
-                <input type="text" name="acc_no" id="acc_no" >
+                <input type="text" name="acc_no" id="acc_no" required>
             </div>
 
             <div class="B.info" id="Account_Name"></div>
                 <label for="acc_name">Account Name</label>
-                <input type="text" name="acc_name" id="acc_name" >
+                <input type="text" name="acc_name" id="acc_name" required>
             </div>
 
             <div class="B.info" id="Bname"></div>
                 <label for="bname">Bank name</label>
-                <input type="text" name="bname" id="bname" >
+                <input type="text" name="bname" id="bname" required>
             </div>
         </fieldset>   
 
@@ -108,12 +108,15 @@ function check(event) {
     var licenceNo = document.getElementById("licenceNo").value;
     var accountNo = document.getElementById("acc_no").value;
     
-    if (password !== confirmPassword) {
+    if (password != confirmPassword) {
         alert("Passwords do not match. Please try again.");
         return false;
     }
 
-  
+    if ( age > 18) { 
+        alert("Sorry, you must be at least 18 years old to proceed. Please verify your age and try again.");
+        return false;
+    }
 
     if (!licenceNo || !accountNo) {
         alert("Please ensure all required fields are filled.");

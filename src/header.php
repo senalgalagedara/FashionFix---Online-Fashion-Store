@@ -35,9 +35,9 @@
                 <span class="material-symbols-outlined shape" >
                     favorite
                 </span>
-                <span class="material-symbols-outlined shape">
+                <a href="orderdetails.php"><span class="material-symbols-outlined shape">
                     shopping_cart
-                </span>
+                </span></a>
                 <div class="signin">
                     <a href="signin.php" class="signfont">Sign Up</a>
                 </div>

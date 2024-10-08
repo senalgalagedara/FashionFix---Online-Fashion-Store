@@ -68,7 +68,7 @@ function showSlides() {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 1000); 
+  setTimeout(showSlides, 7000); 
 }
 </script>
 
@@ -136,7 +136,7 @@ function topFunction() {
             </div>
 
             <div class="box">
-                <a href="#">
+                <a href="product2.php">
                 <div class="minibox disabled">
                 <img src="img/women/women1.jpg" alt="Andina Women's Offlice Dress" class="subimg">
 

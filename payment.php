@@ -205,27 +205,27 @@ if (cardnumber.length < 16)
 {
 alert('Card number must have 16 digits');
 return false; 
-    if(expdate.length>31)
+}
+if(expdate>31)
     {
     alert('Enter valid date');
     return false; 
     }
-        if(expmonth.length>12)
+        if(expmonth>12)
         {
         alert('Enter valid month');
         return false;
         }
-            if(expmonth.csc>4)
+            if(expmonth>4)
             {
             alert('Enter valid month');
             return false; 
             }
-                if(expmonth.csc>4)
+                if(csc>4)
                 {
                 alert('Enter valid month');
                 return false; 
                 }
-    }
   return true;
     }
 </script>

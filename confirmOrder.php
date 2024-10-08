@@ -11,7 +11,10 @@ if($result === TRUE)
     header("location: index.php");
 }
 else{
-    echo ("meka wada nh");
+    echo "<script>
+    alert('Order is not placed');
+          </script>
+        ";
 }
 
 

@@ -16,9 +16,23 @@
     border: 2px solid #ddd;
 }
 
+.bodyall {
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgb(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
 .widthall {
     flex: 3;
     margin-left: 20px;
+  
 }
 
 .accinfo, .Bnkinfo {
@@ -38,10 +52,11 @@ table th, table td {
 }
 
 table th {
-    background-color: #ffa500;
+    background-color: orange;
     color: white;
     font-size: 18px;
     font-weight: 600;
+    
 }
 
 table td {
@@ -64,8 +79,12 @@ td.none:hover {
 }
 
 table td a {
-    color: red;
+    color: black;
     text-decoration: none;
+}
+
+table td a:hover{
+    color: red;
 }
 
 #up {

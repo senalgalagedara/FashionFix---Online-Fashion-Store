@@ -18,7 +18,8 @@ include('config.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="driver_register.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
      
 </head>
 <body>
@@ -27,6 +28,7 @@ include('config.php');
     ?>
 
      <div class="bodyall">
+        
      <div class="propic">
             <img src="src/img/propic.png" alt="profile picture" width="100" height="100">
      </div>
@@ -51,55 +53,55 @@ include('config.php');
                  <tr>
                      <th>First Name</th>
                      <td><?php echo $row['fname']; ?></td>
-                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=fname">delete</a></td>
+                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=fname" class="dele">delete</a></td>
                      
 
                  </tr>
                  <tr>
                      <th>Last Name</th>
                      <td><?php echo $row['lname']; ?></td>
-                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=lname">delete</a></td>
+                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=lname" class="dele">delete</a></td>
                      
                  </tr>
                  <tr>
                      <th>Password</th>
                      <td><?php echo $row['Npassword']; ?></td>
-                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=Password">delete</a></td>
+                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=Password" class="dele">delete</a></td>
                  </tr>
                  <tr>
                      <th>Age</th>
                      <td><?php echo $row['Age']; ?></td>
-                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=Age">delete</a></td>
+                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=Age" class="dele">delete</a></td>
                  </tr>
                  <tr>
                      <th>Address</th>
                      <td><?php echo $row['adress']; ?></td>
-                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=adress">delete</a></td>
+                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=adress" class="dele">delete</a></td>
                  </tr>
                  <tr>
                      <th>Contract Number</th>
                      <td><?php echo $row['contNo']; ?></td>
-                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=contNo">delete</a></td>
+                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=contNo" class="dele">delete</a></td>
                  </tr>
                  <tr>
                      <th>Email</th>
                      <td><?php echo $row['Email']; ?></td>
-                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=Email">delete</a></td>
+                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=Email" class="dele">delete</a></td>
                  </tr>
                  <tr>
                      <th>Bank Account Number</th>
                      <td><?php echo $row['acc_no']; ?></td>
-                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=acc_no">delete</a></td>
+                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=acc_no" class="dele">delete</a></td>
                  </tr>
                  <tr>
                      <th>Bank Account Username</th>
                      <td><?php echo $row['acc_name']; ?></td>
-                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=acc_name">delete</a></td>
+                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=acc_name" class="dele">delete</a></td>
                  </tr>
                  <tr>
                      <th>Bank Name</th>
                      <td><?php echo $row['bname']; ?></td>
-                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=bname">delete</a></td>
+                     <td><a href="deleteDdetails.php?id=<?php echo $row['driver_ID']; ?>&field=bname" class="dele">delete</a></td>
                  </tr>
                  <tr>
                     <td class="none"><button id="up"><a href="updateDdetailes.php?id=<?php echo $row['driver_ID']; ?>">Update</a></button>
@@ -116,5 +118,43 @@ include('config.php');
 mysqli_close($conn); 
 include("src/footer_driver.html");
 ?>
+<script>
+    
+    var anc = document.getElementsByClassName("dele");
+    var logo = document.getElementById("de");
+
+    for (var i = 0; i < anc.length; i++) {
+        anc[i].addEventListener("click", conFirm);
+    }
+
+    function conFirm(event) {
+    
+        var response = confirm("Are you sure?");
+
+        if (response === true) {
+        
+        } else {
+            alert("Deleting data canceled");
+            event.preventDefault();  
+        }
+    }
+
+    logo.addEventListener("click", Logiout);
+
+    function Logiout(event) {
+        var rePonse = confirm("Are you sure?");
+
+        if (rePonse === true) {
+    
+        }
+        else {
+            alert("Logout was cancelled");
+            event.preventDefault();
+        }
+    }
+
+</script>
+
+
 </body>
 </html>

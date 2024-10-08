@@ -4,6 +4,6 @@
     if($con->connect_error){
         die("Connection Failed".$con->connect_error);
     }else{
-        echo "<script>alert('Successfull');</script>";
+        echo "<script>console.log('Successfull');</script>";
     }
 ?>
