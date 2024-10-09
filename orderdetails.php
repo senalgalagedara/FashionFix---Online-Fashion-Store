@@ -199,9 +199,7 @@ if ($result) {
 }
 $alltotal=0;
 $sql12 = "
-    SELECT price FROM order_details where product_id = (
-                        select product_id FROM order_details where price = '2300'
-        );
+    SELECT price FROM order_details where product_id = $id
 ";
 
 $result2 = mysqli_query($conn, $sql12);

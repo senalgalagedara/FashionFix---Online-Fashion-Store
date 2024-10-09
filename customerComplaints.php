@@ -1,3 +1,7 @@
+<?php 
+    require 'adminConfig.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +19,7 @@
 <body>
 
     <?php 
-        include("src/adminHeader1.html");
-        require 'adminConfig.php'; 
+        include("src/adminHeader1.html"); 
 
         if (isset($_GET['delete_complaint_id'])) {
             $complaint_id = $_GET['delete_complaint_id'];
@@ -110,7 +113,7 @@
                         echo "<p style='text-align: center; color: black;'>No Results Found</p>";
                     }
 
-                    
+                    $con->close();
                 ?>
             </div>
         </div>
@@ -156,7 +159,7 @@
 
         function deleteComplaint(id) {
             if (confirm("Are you sure you want to delete this complaint?")) {
-                window.location.href = "admin.php?delete_response_id=" + id;
+                
                 window.location.href = "admin.php?delete_complaint_id=" + id;
             }
         }

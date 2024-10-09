@@ -216,14 +216,10 @@ if(expdate>31)
         alert('Enter valid month');
         return false;
         }
-            if(expmonth>4)
-            {
-            alert('Enter valid month');
-            return false; 
-            }
-                if(csc>4)
+
+                if(csc.length>4)
                 {
-                alert('Enter valid month');
+                alert('Enter valid number');
                 return false; 
                 }
   return true;

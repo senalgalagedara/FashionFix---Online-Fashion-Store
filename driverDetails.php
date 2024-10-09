@@ -90,7 +90,7 @@
                                 <th>Account No</th>
                                 <th>Account Name</th>
                                 <th>Bank Name</th>
-                            
+                                <th>Actions</th>
                             </tr>
                         </thead>";
                     echo "<tbody>";

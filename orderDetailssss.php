@@ -80,7 +80,7 @@
                                     <th>Size</th>
                                     <th>Quantity</th>
                                     <th>Price</th>
-                                    <th>Actions</th>
+                                    
                                 </tr>
                             </thead>";
                         echo "<tbody>";

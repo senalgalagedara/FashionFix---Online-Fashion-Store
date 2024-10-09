@@ -210,7 +210,7 @@
                 if (confirm("Are you sure you want to delete this complaint?")) {
                   
                     window.location.href = "admin.php?delete_response_id=" + id;
-                    window.location.href = "admin.php?delete_complaint_id=" + id;
+        
                 }
         }
 
